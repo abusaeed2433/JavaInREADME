@@ -164,3 +164,16 @@
   - These keywords refer to implementation details of a method, But
   - an abstract method does not have an implementation,
 
+
+    <!-- bottom_nav_bar_1243 -->
+    <div align="center">
+    <a href="../inheritance/part4/">
+        <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
+    </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="../inheritance/part6/">
+        <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
+    </a>
+    </div>
+    <!-- bottom_nav_bar_1243 -->
+    

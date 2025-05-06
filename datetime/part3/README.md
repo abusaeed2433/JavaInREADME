@@ -125,3 +125,18 @@
     ZonedDateTime zdt3 = zdt.withZoneSameInstant(ZoneId.of("Z")); // utc
     System.out.println( zdt3 ); // 2023-03-14T14:30Z
     ```
+
+    
+    
+    <!-- bottom_nav_bar_1243 -->
+    <div align="center">
+    <a href="../datetime/part2/">
+        <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
+    </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="../datetime/part4/">
+        <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
+    </a>
+    </div>
+    <!-- bottom_nav_bar_1243 -->
+    

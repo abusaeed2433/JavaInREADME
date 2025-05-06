@@ -52,3 +52,16 @@ class OverridingTest{
 - **The error occurred because of Java's static type checking,**
 - The class of the reference variable determines which instance methods can be called on it and since `class-A` doesn't have method `m2()`, the compiler will complain,
 - But when we are adding `m2()` in `class-A`, compiler error will be gone. Now in runtime it will call `m2()` of `class-B` since variable `a` is referring to an object of `class-B` due to polymorphism rule.
+
+    <!-- bottom_nav_bar_1243 -->
+    <div align="center">
+    <a href="./java17/part1/">
+        <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
+    </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="None">
+        <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
+    </a>
+    </div>
+    <!-- bottom_nav_bar_1243 -->
+    

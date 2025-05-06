@@ -46,3 +46,16 @@
 
 >> Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. (Martin Golding)
 
+
+    <!-- bottom_nav_bar_1243 -->
+    <div align="center">
+    <a href="../datetime/part5/">
+        <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
+    </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="../formatter/">
+        <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
+    </a>
+    </div>
+    <!-- bottom_nav_bar_1243 -->
+    
