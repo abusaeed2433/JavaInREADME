@@ -11,7 +11,7 @@
 - `reference`:
   - `Stores the reference` of the object which is located in `Heap`,
 - See this image: `1st` one is `primitive`, `2nd` one is `reference`,
-<img src="files/primitive_and_reference_data.png" height="200px" alt="Primitive & Reference data type">
+<img src="../files/primitive_and_reference_data.png" height="200px" alt="Primitive & Reference data type">
 
 - Every `variable name` has `2` things associated with it: 
   - a memory address(`lvalue`),
@@ -89,7 +89,7 @@
   }
   ```
 - See this image also
-<img src="files/primitive_reference_passing.png" height="180px" alt="Primitive & Reference data type">
+<img src="../files/primitive_reference_passing.png" height="180px" alt="Primitive & Reference data type">
 
     
     

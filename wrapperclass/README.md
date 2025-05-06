@@ -8,7 +8,7 @@
 - Wrapper class provides a way to use/convert primitive data as object,
 - Java provided `8` classes to represent each of the `8` primitive types,
 - These classes are called wrapper classes as they wrap a primitive value in an object,
-- <img src="primitive_wrapper_class.jpg" height="180px">
+- <img src="./primitive_wrapper_class.jpg" height="180px">
 - All wrapper classes are immutable,
 - They provide two ways to create their objects:
   - Using constructors,

@@ -45,7 +45,7 @@
 - All classes in an inheritance chain form a tree-like structure, which is known as an `inheritance-hierarchy` or a `class-hierarchy`,
 - All classes in Java have a `superclass` except the `Object` class,
 - Example inheritance hierarchy:
-  <img src="files/inheritance_hierarchy.jpg" height="200px">
+  <img src="../files/inheritance_hierarchy.jpg" height="200px">
 
 - `Object` class is the `ancestor` implicitly,
 - From above hierarchy,
