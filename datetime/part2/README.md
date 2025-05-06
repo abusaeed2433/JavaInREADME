@@ -176,13 +176,14 @@ Some `enums` representing `constants` for date and time components are:
     
     
     
+
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
-<a href="../datetime/part1/">
+<a href=".../datetime/part1/">
     <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="../datetime/part3/">
+<a href=".../datetime/part3/">
     <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
 </a>
 </div>

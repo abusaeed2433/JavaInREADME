@@ -315,13 +315,14 @@
     
     
     
+
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
-<a href="../operator/">
+<a href=".../operator/">
     <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="../classesandobject/part2/">
+<a href=".../classesandobject/part2/">
     <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
 </a>
 </div>
