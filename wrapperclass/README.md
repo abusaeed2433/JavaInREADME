@@ -110,15 +110,16 @@
     
     
     
-    <!-- bottom_nav_bar_1243 -->
-    <div align="center">
-    <a href="../theobjectclass/part2/">
-        <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
-    </a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="../exceptionhandling/part1/">
-        <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
-    </a>
-    </div>
-    <!-- bottom_nav_bar_1243 -->
+    
+<!-- bottom_nav_bar_1243 -->
+<div align="center">
+<a href="../theobjectclass/part2/">
+    <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="../exceptionhandling/part1/">
+    <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
+</a>
+</div>
+<!-- bottom_nav_bar_1243 -->
     
