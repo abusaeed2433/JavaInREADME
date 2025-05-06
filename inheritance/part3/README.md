@@ -172,6 +172,8 @@
 
 >> Basic overriding knowledge is enough in almost most of the cases
 
+    
+    
     <!-- bottom_nav_bar_1243 -->
     <div align="center">
     <a href="../inheritance/part2/">

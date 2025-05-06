@@ -146,6 +146,8 @@
 - Provides a huge benefit to implement `polymorphism`,
 
 >> It's not hard, just try by yourself
+    
+    
     <!-- bottom_nav_bar_1243 -->
     <div align="center">
     <a href="../inheritance/part1/">

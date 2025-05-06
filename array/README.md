@@ -169,13 +169,15 @@
   printArray(brr); // John Jane Mary
   ```
 
+    
+    
     <!-- bottom_nav_bar_1243 -->
     <div align="center">
-    <a href="./regex/part3/">
+    <a href="../regex/part3/">
         <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
     </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="./inheritance/part1/">
+    <a href="../inheritance/part1/">
         <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
     </a>
     </div>
