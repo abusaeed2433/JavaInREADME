@@ -180,13 +180,15 @@
     
     
 
+
+
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
-<a href=".../datetime/part3/">
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/datetime/part3/">
     <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href=".../datetime/part5/">
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/datetime/part5/">
     <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
 </a>
 </div>

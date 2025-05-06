@@ -62,13 +62,15 @@
     
     
 
+
+
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
-<a href=".../inheritance/part6/">
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/inheritance/part6/">
     <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href=".../enum/">
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/enum/">
     <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
 </a>
 </div>
