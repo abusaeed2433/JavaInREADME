@@ -91,7 +91,7 @@
 - The access level of the `overriding-method` must be at least the `same or more relaxed` than that of the `overridden-method`,
 - `private` members can't be overridden since they are not inherited,
 - See this:
-- <img src="files/relaxed_overriding_method.jpg" height="160px"/>
+- <img src="../files/relaxed_overriding_method.jpg" height="160px"/>
 
 
 ### Rule-6:

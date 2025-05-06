@@ -135,7 +135,7 @@
   I have an orange and five pineapples // replaced
   ```
 - Boundary matchers in java:
-  <img src="files/boundary_matcher.jpg" height="200px">
+  <img src="../files/boundary_matcher.jpg" height="200px">
 - Remember, A word character is defined by `[a-zA-Z_0-9]`,
 - `A word boundary` is a `zero-width match` that matches the following:
   - Between a `word character` and a `non-word character`,

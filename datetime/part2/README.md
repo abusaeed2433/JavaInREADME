@@ -5,7 +5,7 @@
 
 
 ## Instants and Durations
-<img src="files/duration_and_instant.jpg" height="180px">
+<img src="../files/duration_and_instant.jpg" height="180px">
 
 - `Epoch` is the reference point. which is `Midnight January 1, 1970 UTC`,
 - An `Instant` is a specific point,
@@ -107,7 +107,7 @@
   ```
 
 ## Human scale date time components
-<img src="files/human_scale_date_time.jpg" height="300px">
+<img src="../files/human_scale_date_time.jpg" height="300px">
 
 
 ## Useful Datetime-Related `Enums`

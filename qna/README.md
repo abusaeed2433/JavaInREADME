@@ -10,7 +10,7 @@
 - String Constant Pool also resides in the Heap Memory.
 
 <div>
-<img src="images/stack_and_heap.jpeg" alt="Stack and Heap" height="300px">
+<img src="./images/stack_and_heap.jpeg" alt="Stack and Heap" height="300px">
 </div>
 Image Source: Scalar
 

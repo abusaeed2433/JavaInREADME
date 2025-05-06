@@ -94,7 +94,7 @@
     ```
 - While `down-casting`, 
   - Make sure the variable(`employee`) is holding the object of the class(`Manager`) to which(`Manager`) you are going to cast,
-    <img src="files/type_check.jpg" height="140px">
+    <img src="../files/type_check.jpg" height="140px">
   
   - In `(a)`, `runtime-error` is thrown. Because,
     - `compile-time` check is passed,

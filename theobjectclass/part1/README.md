@@ -51,7 +51,7 @@
       - `clone()`, 
       - `finalize()`
   - Details of methods:
-  <img src="files/method_of_object_class.jpg">
+  <img src="../files/method_of_object_class.jpg">
 
   - `Implemented` means method have `default implementation`,
   - `Customizable` means method can be `overridden`,

@@ -77,9 +77,9 @@
   }
   ```
   - Stack trace with `(a)`:
-  - <img src="files/with_fill_stack.jpg" height="80px">
+  - <img src="../files/with_fill_stack.jpg" height="80px">
   - Stack trace without `(a)`:
-  - <img src="files/without_fill_stack.jpg" height="80px">
+  - <img src="../files/without_fill_stack.jpg" height="80px">
   - Practice yourself to understand clearly,
   
 

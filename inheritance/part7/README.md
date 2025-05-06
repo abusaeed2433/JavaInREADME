@@ -7,7 +7,7 @@
 - Java **doesn't support** multiple inheritance of class,
 - There is no `Diamod-problem`,
   - Diamond problem
-    - <img src="files/diamond_problem.jpeg" height="180px" > 
+    - <img src="../files/diamond_problem.jpeg" height="180px" > 
     - Occurs when same method(`a1()`) is available in more than one parent class(`B`, `C`),
     - So, after inheriting, compiler will be confused which one to call,
 - Java don't have such problem,

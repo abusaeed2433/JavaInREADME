@@ -32,7 +32,7 @@
 - `instanceof` operator performs `compile-time` check as well as `runtime` check,
 - At compile-time, it checks if it is possible for its `left-hand` operand to point to an instance of its `right-hand` operand type,
 - Ex: See `InstanceOfTest.java`,
-  <img src="files/instanceof_operator.jpg" height="200px">
+  <img src="../files/instanceof_operator.jpg" height="200px">
 - For above structure:
   - Ex-1:
     ```

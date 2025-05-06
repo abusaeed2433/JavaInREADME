@@ -4,7 +4,7 @@
 > Codes are in `partOne` package
 
 <p align="center">
-    <img src="files/regex_intro.jpg" height="300px" alt="from nixCraft facebook">
+    <img src="../files/regex_intro.jpg" height="300px" alt="from nixCraft facebook">
 </p>
 
 ## Introduction
