@@ -64,9 +64,9 @@
       Cat cat = new Cat("Cat");
       Class<?> catClass = cat.getClass();
   
-      System.out.println(catClass); // class g_TheObjectClass.Cat
+      System.out.println(catClass); // class theobjectclass.part2.Cat
   
-      System.out.println(catClass.getName()); // g_TheObjectClass.Cat
+      System.out.println(catClass.getName()); // theobjectclass.part2.Cat
   
       System.out.println(catClass.getSimpleName()); // Cat
   }
