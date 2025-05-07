@@ -70,8 +70,8 @@
           System.out.println(student.getName()); // Imran
           System.out.println(student.getAge()); // 21
   
-          student.setRoll(24);
-          student.setName("Subah");
+          student.setRoll(25);
+          student.setName("Prottoy");
           student.setAge(21);
           // above 3 lines change the properties of the object to which student is pointing. This is changing the properties of object, so affect actual data
       }
@@ -83,7 +83,7 @@
   
           Student imran = new Student(12,"Imran",21);
           printInfoAdvanced(imran);
-          System.out.println(imran.getName()); // Subah
+          System.out.println(imran.getName()); // Prottoy
       }
       
   }
