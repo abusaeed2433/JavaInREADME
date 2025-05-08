@@ -1,9 +1,8 @@
 
-# Exception handling part-1
-> Codes are in `partOne` package
+# Exception Handling - part1
 
 ## Exception
-- A condition that may arise during the execution when a normal path of execution is not defined,
+- A condition that may arise during the execution when a normal path of execution is not defined.
 - Ex: See `firstTest()` in `Test.java`
     ```
     private static void firstTest(int y){
@@ -12,7 +11,7 @@
         System.out.println(result);
     }
     ```
-- In above example, 3rd line inside method won't be executed because `2nd line break normal execution`, since integer can't be divided b zero(`0`),
+- In above example, 3rd line inside method won't be executed because `2nd line break normal execution`, since integer can't be divided by zero(`0`),
 - Above example can be written using `if-else`, but it will make code complex if there are many such condition,
 - Equivalence `if-else` code(See `firstTestBadSolution()` in `Test.java`):
     ```
@@ -137,7 +136,8 @@
         }
     }
     ```
-  ```
+    or
+    ```
     private static void handleChecked2(String filePath) throws IOException{
         FileReader fileReader = new FileReader(filePath);
         printFile(fileReader);

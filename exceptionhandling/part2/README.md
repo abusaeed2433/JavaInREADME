@@ -1,6 +1,5 @@
 
-# Exception handling part-2
-> Codes are in `partTwo` package
+# Exception Handling - part2
 
 ## Rethrowing an Exception
 - Can be rethrown i.e. can be thrown from `catch` block,
@@ -77,9 +76,20 @@
   }
   ```
   - Stack trace with `(a)`:
-  - <img src="../files/with_fill_stack.jpg" height="80px">
+    ```log
+    java.lang.Exception: An error has occurred.
+          at exceptionhandling.part2.Test.m1(Test.java:19)
+          at exceptionhandling.part2.Test.hideTrace(Test.java:7)
+          at exceptionhandling.part2.Test.main(Test.java:74)
+    ```
   - Stack trace without `(a)`:
-  - <img src="../files/without_fill_stack.jpg" height="80px">
+    ```log
+    java.lang.Exception: An error has occurred.
+            at exceptionhandling.part2.Test.m2(Test.java:25)
+            at exceptionhandling.part2.Test.m1(Test.java:16)
+            at exceptionhandling.part2.Test.hideTrace(Test.java:7)        
+            at exceptionhandling.part2.Test.main(Test.java:76)
+    ```
   - Practice yourself to understand clearly,
   
 
@@ -178,14 +188,15 @@
       System.out.println("Resource will be closed before this"); // Resource will be closed before this
   }
   ```
+- Output
+  ```
+  Saeed
+  None
+  Closed None
+  Closed Saeed
+  Resource will be closed before this
+  ```
 - It's actually useful. Just make sure your resource class implements `AutoCloseable` & has `close()` method,
-
-    
-    
-    
-    
-    
-
 
 
 <!-- bottom_nav_bar_1243 -->

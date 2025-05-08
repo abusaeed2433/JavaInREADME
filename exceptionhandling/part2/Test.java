@@ -68,14 +68,19 @@ public class Test {
     }
 
     public static void main(String[] args) {
+        System.out.println("------------- testRethrow ---------------");
         testRethrow();
+        System.out.println("------------- testRethrow2 --------------");
         testRethrow2(0);
+        System.out.println("------------- hideTrace -----------------");
         hideTrace();
+        System.out.println("------------- throwMultiple -------------");
         try {
             throwMultiple(0);
         }catch (Exception e){
             System.out.println(e.getMessage()); // Can't be zero
         }
+        System.out.println("------------ testTryWithResource --------");
         testTryWithResource();
     }
 
