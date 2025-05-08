@@ -1,8 +1,4 @@
-
-
-# Object part-1
-> Codes are in `partOne` package
-
+# The Object Class - part1
 
 ## Introduction
 - Available in `java.lang` package,
@@ -181,12 +177,12 @@
   
       Cat cat = new Cat("Happy");
   
-      System.out.println(jakaria.equals(jakaria)); // same reference - true
+      System.out.println(jakaria.equals(jakaria)); // true - since same reference
   
-      System.out.println(cat.equals(saeed)); // object of different classes - false
-      System.out.println(saeed.equals(jakaria)); // different hashCode - false
+      System.out.println(cat.equals(saeed)); // false - object of different classes
+      System.out.println(saeed.equals(jakaria)); // false - different hashCode values
   
-      System.out.println(saeed.equals(saeedAgain)); // fine - true
+      System.out.println(saeed.equals(saeedAgain)); // true - values are same
   }
   ```
 
@@ -199,8 +195,8 @@
     private static void defaultEqualsTo(){
         Cat cat = new Cat("Happy 3X");
 
-        System.out.println(cat.toString()); // g_TheObjectClass.Cat@4dd8dc3
-        System.out.println(cat); // g_TheObjectClass.Cat@4dd8dc3
+        System.out.println(cat.toString()); // theobjectclass.part2.Cat@7a81197d
+        System.out.println(cat); // theobjectclass.part2.Cat@7a81197d
 
         //above two statements are equivalent
     }
@@ -233,26 +229,17 @@
       Student galib = new Student(35,"Galib",22,-173);
   
       int heightInFeet = (int)(galib.getHeight() / 39);
-      System.out.println(heightInFeet); // negative so, must have some problem with value
+      System.out.println(heightInFeet); // -4
   
       //finding that problem
       System.out.println(galib.toString()); // roll: 35, name: Galib, age: 22, height: -173.0
   
-      galib.setHeight(173); // fixing
+      galib.setHeight(173);
   
       heightInFeet = (int)(galib.getHeight() / 39);
-      System.out.println(heightInFeet); // fine
+      System.out.println(heightInFeet); // 4
   }
   ```
-  
-
-    
-    
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
@@ -265,4 +252,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    

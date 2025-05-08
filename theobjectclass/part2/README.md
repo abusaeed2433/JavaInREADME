@@ -1,6 +1,5 @@
 
-# Object part-2
-> Codes are in `partTwo` package
+# The Object Class - part2
 
 ## Cloning Objects
 - Java doesn't provide an automatic mechanism to clone (make a copy) an object,
@@ -8,7 +7,7 @@
   - `x = y`,(Assigning `y` into `x`)
     - Copy reference of `y` into `x`, 
     - Doesn't copy the content of the object that `y` refers to,
-- For cloning , you must implement `Clonable` interface to your class. Why? See `Marker interface` in interface section,
+- For cloning , you must implement `Cloneable` interface to your class. Why? See `Marker interface` in interface section,
 - `clone()` method in `Object` class is as follows:
   ```
   protected Object clone() throws CloneNotSupportedException
@@ -176,7 +175,7 @@
 - Immutable version of `Cat` class will be like this. See `GammaCat.java`,
   ```
   public class GammaCat {
-      private final String name; // <------- final optional though
+      private final String name; // <------- final optional though, since private and no setter
   
       public GammaCat(String name) { this.name = name; }
   
@@ -199,21 +198,13 @@
   
   }
   ```
-  just remove the ways that can make changes in variable. Here `setName()` is removed,
+  Just remove the ways that can make changes in the variable. Here `setName()` is removed and variable is private. So there is no way change the variable.
 - If you want to make your class `immutable` and your class contains reference of any other classes, then make sure to make those reference classes `immutable`,
 - For ex: for making `Human` class immutable, you have to make `Cat` class immutable also,
 - So, for making a class `immutable`,
   - Make all instance variable `final`,(Optional, but compiler will ensure immutability),
   - Make all references class `immutable`,
-  - Remove methods that can change variables state(Setter methods),
-
-
-    
-    
-    
-    
-    
-
+  - Remove methods that can change variables state (Setter methods).
 
 
 <!-- bottom_nav_bar_1243 -->
