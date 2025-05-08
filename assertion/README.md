@@ -19,7 +19,7 @@
 - If `booleanAssertionExpression` evaluates to true, no action is taken. Code is executed normally,
 - But if evaluates to false, `java.lang.AsssertionError` is thrown,
 - Assertion is by default disabled. You must run your code using below to see assertion in action:
-    ```
+    ```bash
     java -ea YourClassName
     ```
 - Ex:
@@ -27,7 +27,7 @@
     java -ea src/j_Assertion/Test.java
     ```
 - Ex(See `Test.java`):
-    ```
+    ```java
     private static void assertType1(){
         int a = getNumber(2);
     
@@ -53,7 +53,7 @@
 
 ### Another example:
 - method definition
-  ```
+  ```java
     private static int calculateAge(LocalDate localDate){
         ...
         return (int)age;
@@ -61,21 +61,13 @@
   ```
 - Calling like:
 
-    ```
+    ```java
     LocalDate dob = LocalDate.of(2001,3,21);
     int age = calculateAge(dob);
     
     assert age >= 22;
     System.out.println("I was right"); // executed
     ```
-
-    
-    
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
@@ -88,4 +80,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    
