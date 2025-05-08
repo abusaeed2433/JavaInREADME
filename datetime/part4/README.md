@@ -1,15 +1,11 @@
 
-
-# DateTime part-4
-
-> Codes are in `partFour` package
-
+# DateTime - part4
 
 ## Clocks
 - Provides access to the current `instant`, `date`, and `time` in a time `zone`,
 - You can extend the `Clock` class to implement your own clock,
 - Ex: See `testClock()` in `Test.java`,
-    ```
+    ```java
     Clock clock = Clock.systemDefaultZone();
     Clock clock1 = Clock.system(ZoneId.of("+06:00")); 
     
@@ -35,7 +31,7 @@
 - When you add a `duration of a day`, it will always add `24 hours`,
 - `normalized()` method of the `Period` class to normalize the `years` and `months` only,
 - Ex(`Period`): See `testPeriod()` in `Test.java`,
-  ```
+  ```java
   private static void testPeriod(){  
       Period period;
       period = Period.of(1,1,1);
@@ -64,7 +60,7 @@
   }
   ```
 - Ex(`Duration`): See `testDuration()` in `Test.java`,
-  ```
+  ```java
   private static void testDuration(){
   
       Duration duration;
@@ -100,7 +96,7 @@
   - If such parameters are passed to the methods, a `runtime exception` is thrown,
 - For calculating, specified `end date/time` should be `convertible` to the start `date/time`,
 - Ex: See `calculateElapsed()` in `Test.java`,
-  ```
+  ```java
   private static void calculateElapsed(){
   
       LocalTime t1 = LocalTime.of(7,12);
@@ -129,7 +125,7 @@
   - `MonthDay`:
     - Represent `Month` and `Day`,
 - Ex: See `calculateDayName()` in `Test.java`,
-  ```
+  ```java
   private static void calculateDayName(){
       MonthDay spDate = MonthDay.of(Month.AUGUST,17);
   
@@ -146,7 +142,7 @@
   }
   ```
   Output:
-  ```
+  ```text
   2023-08-17 -> Thursday
   2024-08-17 -> Saturday
   2025-08-17 -> Sunday
@@ -160,7 +156,7 @@
 - Sometimes we need to find date of `first Monday of the month`, `the next Tuesday` etc,
 - Can be done using `TemporalAdjuster` interface,
 - Ex:
-  ```
+  ```java
   LocalDate localDate = LocalDate.of(2023,Month.AUGUST,17);
   
   LocalDate localDate1 = localDate.with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
@@ -175,12 +171,6 @@
   LocalDate localDate4 = localDate3.with(TemporalAdjusters.lastDayOfMonth());
   System.out.println(localDate4); // 2023-08-31
   ```
-
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">

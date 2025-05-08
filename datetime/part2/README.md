@@ -1,7 +1,5 @@
 
-# DateTime part-2
-
-> Codes are in `partTwo` package
+# DateTime - part2
 
 
 ## Instants and Durations
@@ -18,7 +16,7 @@
 - Can be compared to check which one is earlier,
 - Classes in the Date-Time API are `Serializable`,
 - Ex(`Instant`):
-  ```
+  ```java
   Instant instant = Instant.now();
   Instant instant1 = Instant.ofEpochSecond(86420); //second
   
@@ -29,7 +27,7 @@
   System.out.println( instant1.get(ChronoField.MILLI_OF_SECOND) ); // 0
   ```
 - Ex(`Duration`):
-  ```
+  ```java
   Duration duration = Duration.ofSeconds(86400);
   System.out.println(duration); // PT24H   < ------ 24hours
   
@@ -40,7 +38,7 @@
   System.out.println( duration1.get(ChronoUnit.NANOS) ); // 0
   ```
 - Ex(compare):
-  ```
+  ```java
   Instant instant = Instant.ofEpochSecond(86420);
   Instant instant1 = Instant.ofEpochSecond(86420*2);
   
@@ -65,7 +63,7 @@
 - `ISO-8601 standards` support zone offsets between `-12:00 to +14:00`. But, 
 - To avoid any problems in future if the zone offset gets extended, the `Date-Time API` supports zone offsets between `-18:00 to +18:00`,
 - Ex:
-  ```
+  ```java
   ZonedDateTime zdt = ZonedDateTime.now(ZoneId.of("Asia/Dhaka"));
   ZoneOffset zoneOffset = ZoneOffset.from(zdt);
   System.out.println(zoneOffset); // +06:00
@@ -89,7 +87,7 @@
   - `(3rd)`Zone ID is specified by using a `region`, 
     - For example, `Asia/Dhaka`,
 - Ex:
-  ```
+  ```java
   ZoneId zoneId = ZoneId.of("+06:00");
   System.out.println(zoneId); // +06:00
   ZonedDateTime zonedDateTime = ZonedDateTime.now(zoneId);
@@ -115,7 +113,7 @@ Some `enums` representing `constants` for date and time components are:
 - ### Month
   - Contains `12` constants to represents the `12` months of the year,
   - Ex:
-    ```
+    ```java
     System.out.println( EnumSet.allOf(Month.class) );
     // [JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER]
 
@@ -125,7 +123,7 @@ Some `enums` representing `constants` for date and time components are:
 - ### DayOfWeek
   - `7` constants to represent `seven days` of the week,
   - Ex:
-    ```
+    ```java
     System.out.println(EnumSet.allOf(DayOfWeek.class));
     // [MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY]
 
@@ -139,7 +137,7 @@ Some `enums` representing `constants` for date and time components are:
     [NanoOfSecond, NanoOfDay, MicroOfSecond, MicroOfDay, MilliOfSecond, MilliOfDay, SecondOfMinute, SecondOfDay, MinuteOfHour, MinuteOfDay, HourOfAmPm, ClockHourOfAmPm, HourOfDay, ClockHourOfDay, AmPmOfDay, DayOfWeek, AlignedDayOfWeekInMonth, AlignedDayOfWeekInYear, DayOfMonth, DayOfYear, EpochDay, AlignedWeekOfMonth, AlignedWeekOfYear, MonthOfYear, ProlepticMonth, YearOfEra, Year, Era, InstantSeconds, OffsetSeconds]
     ```
   - Ex:
-    ```
+    ```java
     LocalDate localDate = LocalDate.of(2023, Month.MARCH, 11);
 
     System.out.println( localDate.get(ChronoField.YEAR) ); // 2023
@@ -156,7 +154,7 @@ Some `enums` representing `constants` for date and time components are:
     [Nanos, Micros, Millis, Seconds, Minutes, Hours, HalfDays, Days, Weeks, Months, Years, Decades, Centuries, Millennia, Eras, Forever]
     ```
   - Ex:
-    ```
+    ```java
     LocalDate date = LocalDate.of(2023, Month.MARCH, 11);
     System.out.println(date); // 2023-03-11
   
@@ -169,15 +167,6 @@ Some `enums` representing `constants` for date and time components are:
     LocalDate date3 = date.plus(2,ChronoUnit.DECADES);
     System.out.println(date3); // 2043-03-11
     ```
-
-
-    
-    
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">

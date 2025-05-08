@@ -1,8 +1,5 @@
 
-# DateTime part-1
-
-> Codes are in `partOne` package
-
+# DateTime - part1
 
 ## Introduction
 - `Java 8` introduced a new `Date-Time API`,
@@ -53,7 +50,7 @@
     - `java.time.zone`: 
       - contains classes supporting time zones and zone rules
 - Ex: See `basicExample()` in `Test.java`: (Will be explained later),
-    ```
+    ```java
     private static void basicExample(){
         LocalDate ld = LocalDate.of(2023, Month.MARCH,23);
         System.out.println(ld); // 2023-03-23
@@ -69,7 +66,7 @@
 ## The `ofXXX()` Methods
 - Allow creating object,
 - Ex:
-    ```
+    ```java
     LocalDate date1 = LocalDate.now();
     System.out.println(date1); // 2023-08-16
 
@@ -86,7 +83,7 @@
 - A `static factory method`, similar to an `of()` method,
 - Create object from another `argument`. `argument` should have necessary value for converting,
 - Ex:
-    ```
+    ```java
     LocalDate date6 = LocalDate.now();
     System.out.println(date6); // 2023-08-16
 
@@ -106,7 +103,7 @@
 - For changing some field you need to use something like `withXXX`,
 - A `withXXX()` method `returns a copy` of an object with the `specified field changed`,
 - Ex:
-    ```
+    ```java
     LocalDate date9 = LocalDate.of(2023,Month.AUGUST,16);
     LocalDate date10 = date9.withYear(2024);
     System.out.println(date9); // 2023-08-16
@@ -119,7 +116,7 @@
 ## The `getXXX()` Methods
 - Returns the specified `component` of the object,
 - Ex:
-    ```
+    ```java
     LocalDate date = LocalDate.of(2023,Month.AUGUST,16);
     
     System.out.println( date.getYear() ); // 2023
@@ -136,7 +133,7 @@
 ## The `toXXX()` Methods
 - Converts an object to a related XXX type,
 - Ex:
-    ```
+    ```java
     LocalDateTime dateTime = LocalDateTime.of(2023,Month.AUGUST,16,23,10);
     System.out.println(dateTime); // 2023-08-16T23:10
     
@@ -154,7 +151,7 @@
 - `withXXX()` changes field and return same type of object. But
 - `atXXX()` may return different type by taking additional info,
 - Ex:
-    ```
+    ```java
     LocalDate date2 = LocalDate.of(2023,Month.AUGUST,16);
     System.out.println(date2); // 2023-08-16
     
@@ -168,7 +165,7 @@
 ## The `plusXXX()` and `minusXXX()` Methods
 - Returns a copy after adding or subtracting a component value,
 - Ex:
-    ```
+    ```java
     LocalDate date3 = LocalDate.of(2023,Month.AUGUST,16);
     System.out.println(date3); // 2023-08-16
     
@@ -183,7 +180,7 @@
 - Don't make sense on `dates` and `times`,
 - Applicable to `Duration` and `Period`,
 - Ex:
-    ```
+    ```java
     Duration d = Duration.ofSeconds(200);
     System.out.println(d); // PT3M20S <-- 3min 20sec
     
@@ -197,14 +194,6 @@
     System.out.println(d3); // PT-3M-20S
     ```
 
-    
-    
-    
-    
-    
-
-
-
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
 <a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/string/part2/">
@@ -216,4 +205,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    

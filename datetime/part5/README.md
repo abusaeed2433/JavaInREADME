@@ -1,8 +1,5 @@
 
-
-# DateTime part-5
-
-> Codes are in `partFive` package
+# DateTime - part5
 
 ## Formatting Dates and Times
 - Representing a `datetime` object in a `user-defined textual form`,
@@ -21,7 +18,7 @@
 ## Using `pre-defined` `standard datetime formatters`,
 - Most of the formatters use `ISO datetime formats`,
 - Ex:
-    ```
+    ```java
     LocalDate date = LocalDate.of(2023, Month.AUGUST,17);
     String strDate;
       
@@ -43,7 +40,7 @@
 - Done using `format()` method on `datetime` related class,
 - `format()` method take an object of the `DateTimeFormatter` class,
 - Ex:
-    ```
+    ```java
     LocalDate date = LocalDate.of(2023, Month.AUGUST,17);
     String strDate;
     
@@ -230,7 +227,7 @@
     </table>
 
 - Ex:
-    ```
+    ```java
     LocalDate date = LocalDate.of(2023, Month.AUGUST,17);
     
     String pattern = "ddMMM yy";
@@ -252,7 +249,7 @@
 ## Using the DateTimeFormatterBuilder class
 - Previous one is enough for all cases,
 - Ex:
-    ```
+    ```java
     DateTimeFormatter formatter = new DateTimeFormatterBuilder()
             .appendLiteral("My birthday in ")
             .appendValue(ChronoField.YEAR)
@@ -268,7 +265,7 @@
 ## Using Locale Specific Formats
 - Uses predefined format for which is locale specific,
 - Ex:
-    ```
+    ```java
     LocalDate ld = LocalDate.of(2023, Month.AUGUST, 17);
     
     DateTimeFormatter fmt = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
@@ -288,14 +285,6 @@
     DateTimeFormatter formatter1 = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL);
     System.out.println( formatter1.format(zdt) ); // Thursday, August 17, 2023 at 11:12:13 AM +06:00
     ```
-
-
-
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">

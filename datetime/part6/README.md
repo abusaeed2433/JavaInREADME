@@ -1,7 +1,5 @@
 
-# DateTime part-6
-
-> Codes are in `partSix` package
+# DateTime - part6
 
 ## Parsing Dates and Times
 - Process of creating a `date`, `time`, or `datetime` object from a `string`,
@@ -12,7 +10,7 @@
 - `getErrorIndex()` method returns the `index` in the text where the error occurred,
 - `getParsedString()` method returns the text being parsed,
 - Ex(using `datetime` `parse()`):
-    ```
+    ```java
     String strDate = "2023-08-17";
     
     LocalDate localDate = LocalDate.parse(strDate);
@@ -23,7 +21,7 @@
     System.out.println(localDate1); // 2023-08-17
     ```
 - Ex(Using `DateTimeFormatter` `parse()`):
-    ```
+    ```java
     String pattern = "yyyy-MM-dd";
     String strDate = "2023-08-17";
     
@@ -43,15 +41,7 @@
     System.out.println(localDate1); // 2023-08-17                
     ```
 
-
 >> Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. (Martin Golding)
-
-
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">

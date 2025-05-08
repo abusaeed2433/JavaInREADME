@@ -1,7 +1,5 @@
 
-# DateTime part-3
-
-> Codes are in `partThree` package
+# DateTime - part3
 
 ## `LocalDate`, `LocalTime`, and `LocalDateTime`
 - `LocalDate`:
@@ -11,7 +9,7 @@
 - `LocalDateTime`:
   - Represent `Date` & `Time` without `zone`,
 - Ex: See `dateTimeDateTime()` in `Test.java`,
-    ```
+    ```java
     LocalDate date = LocalDate.of(2023, Month.MARCH, 23);
     System.out.println( date ); // 2023-03-23
     
@@ -48,7 +46,7 @@
   OffsetDateTime = LocalDateTime + ZoneOffset
   ```
 - Ex: See `zoneTimeDateTime()` in `Test.java`,
-    ```
+    ```java
     ZoneOffset zone = ZoneOffset.of("+06:00");
 
     OffsetTime time = OffsetTime.of(11,12,13,0,zone);
@@ -83,7 +81,7 @@
     ZonedDateTime = LocalDateTime + ZoneId
     ```
 - Ex: See `testZonedDateTime()` in `Test.java`,
-    ```
+    ```java
     ZoneId zoneId = ZoneId.of("+06:00");
     
     ZonedDateTime zdt = ZonedDateTime.of(2023,3,21,11,12,12,0,zoneId);
@@ -111,7 +109,7 @@
 ## Same Instant, Different Times
 - Can `Instant` can have different time because of different `zone`,
 - Ex: See `zoneConversion()` in `Test.java`,
-    ```
+    ```java
     LocalDateTime ldt = LocalDateTime.of(2023, Month.MARCH, 14, 17, 30);
     ZoneId zoneSaudi = ZoneId.of("Asia/Riyadh");
     
@@ -125,14 +123,6 @@
     ZonedDateTime zdt3 = zdt.withZoneSameInstant(ZoneId.of("Z")); // utc
     System.out.println( zdt3 ); // 2023-03-14T14:30Z
     ```
-
-    
-    
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
