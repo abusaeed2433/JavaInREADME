@@ -1,7 +1,5 @@
 
-# String part-2
-
-> Codes are in `partTwo` package
+# String - part2
 
 ## Some String operations
 - See `testFewOperations()` in `Test.java`,
@@ -9,7 +7,7 @@
   - `.chartAt(index)`,
   - Runtime error if `index` is invalid,
   - Ex:
-    ```
+    ```java
     String str = "I can write poems";
     System.out.println( str.charAt(2) ); // c
     ```
@@ -18,7 +16,7 @@
   - `true` is both strings are completely equal(`1st`),
   - `true` if equals after ignoring case(`2nd`),
   - Ex:
-    ```
+    ```java
     String str1 = "Hello";
     String str2 = "hello";
 
@@ -28,7 +26,7 @@
 - ### Empty check:
   - Can be checked in `3` ways, 
   - Ex:
-    ```
+    ```java
      String name = "";
 
      System.out.println( name.isEmpty() ); // true
@@ -38,15 +36,15 @@
 - ### Changing case:
   - `.toLowerCase()` & `.toUpperCase()`, 
   - Ex:
-    ```
+    ```java
     String mix = "Process FINISHED";
     System.out.println( mix.toUpperCase() ); // PROCESS FINISHED
     System.out.println( mix.toLowerCase() ); // process finished
     ```
 - ### Finding position:
-  - `.indexOf(text)`, `lastIndexOf(text)`, 
+  - `.indexOf(text)`, `.lastIndexOf(text)`, 
   - Ex:
-    ```
+    ```java
      String msg = "You are welcome";
      System.out.println( msg.indexOf('o') ); // 1 - first o
      System.out.println( msg.indexOf('x') ); // -1
@@ -57,10 +55,10 @@
 - ### Representing value into String:
   - `String.valueOf(value)`,
   - Ex:
-    ```
+    ```java
     // Representing value into String
     String strInt = String.valueOf(1000);
-    System.out.println(strInt); // 10000
+    System.out.println(strInt); // 1000
 
     String strDou = String.valueOf(200.5d);
     System.out.println(strDou); // 200.5
@@ -71,7 +69,7 @@
 - ### Finding substring:
   - `.substring(int beginIndex)`, `.substring(int beginIndex,int beforeThisIndex)`,
   - Ex:
-    ```
+    ```java
     String total = "Rahim Karim Tamim";
 
     String rahim = total.substring(0,5);
@@ -83,15 +81,16 @@
 - ### Removing Leading and trailing spaces and control characters:
   - `.trim()`,
   - Ex:
-    ```
+    ```java
     String code = " \n hello pluto \t ";
     System.out.println( code.trim() ); // hello pluto
     ```
 - ### Replacing part of string,
-  - `.replace(oldStr, new)`, `replaceAll(n_Regex,new)`,
-  - I will discuss `n_Regex` later insha'Allah if I can,
+  - `.replace(oldStr, new)`, `.replaceAll(regex,new)`,
+  - `.replace` takes (`CharSequence `, `CharSequence `) or (`char`, `char`), whereas `.replaceAll` takes (`regex`, `String`)
+  - I will discuss `regex` later insha'Allah in regex section.
   - Ex:
-    ```
+    ```java
     String greeting = "Hello old man, Hello";
     System.out.println( greeting.replace("Hello","Hi") ); // Hi old man, Hi
     System.out.println( greeting.replaceAll("Hello","Hi") ); // Hi old man, Hi 
@@ -99,27 +98,26 @@
 - ### Matching start & end of a string;
   - `.startsWith(str)`, `.endsWith(str)`,
   - Ex:
-    ```
+    ```java
     String eq = "20 + 22 = 42";
     System.out.println( eq.startsWith("2")); // true
     System.out.println( eq.endsWith("42")); // true
     ```
 
 - ### Splitting string:
-  - `.split(n_Regex)`,
+  - `.split(regex)`,
   - Ex:
-    ```
+    ```java
      String strVowels = "a,e,i,o,u";
-     String[] vowels = strVowels.split(","); //split(n_Regex)
+     String[] vowels = strVowels.split(","); //split(regex)
     ```
 - ### Joining string:
   - `String.join(sep, str1,str2.....)`,
   - Ex:
-    ```
+    ```java
     String joined = String.join(",","A","E","I","O","U"); // 1st one is separator
     System.out.println(joined); // A,E,I,O,U
     ```
-
 
 ## String in switch statement
 - `switch` can't be null,
@@ -127,7 +125,7 @@
 - `case` can't be variable,
 - It is basically an `if-else` ladder,
 - Ex: See `testSwitchExpression()` in `Test.java`,
-  ```
+  ```java
   private static void testSwitchExpression(){
           
       String status = "on";
@@ -151,7 +149,7 @@
 - `StringBuffer` is `thread-safe`, but `StringBuilder` is not,
 - `StringBuffer` may be slower than `StringBuilder`,
 - Ex: See `stringBuilderTest()` in `Test.java`,
-  ```
+  ```java
   private static void stringBuilderTest(){
   
       StringBuilder builder = new StringBuilder();
@@ -185,7 +183,7 @@
 - Can be concatenated using `+` operator,
 - Better to use `StringBuilder` or `StringBuffer` since multiple objects are not being created,
 - Ex: See `concatenateTest()` in `Test.java`,
-  ```
+  ```java
   private static void concatenateTest(){
       int num = 5;
   
@@ -209,7 +207,7 @@
   - Returns `-1` if `1st` one comes before `2nd` one,
   - Returns `1` if `1st` one comes after `2nd` one,
 - Ex: See `dictCompare()` in `Test.java`,
-  ```
+  ```java
   private static void dictCompare(){
   
       String str1 = "abc";
@@ -231,14 +229,6 @@
   }
   ```
 
-    
-    
-    
-    
-    
-
-
-
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
 <a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/string/part1/">
@@ -250,4 +240,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    

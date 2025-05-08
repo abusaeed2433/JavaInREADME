@@ -23,8 +23,8 @@
     java -ea YourClassName
     ```
 - Ex:
-    ```
-    java -ea src/j_Assertion/Test.java
+    ```bash
+    java -ea assertion\Test.java
     ```
 - Ex(See `Test.java`):
     ```java

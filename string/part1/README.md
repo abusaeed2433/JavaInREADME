@@ -1,8 +1,5 @@
 
-# String part-1
-
-> Codes are in `partOne` package
-
+# String - part1
 
 ## Introduction
 - A sequence of zero or more characters,
@@ -20,13 +17,13 @@
   - `""` // empty String literals,
   - `Hello world` // String literals of 11 characters
 - Cannot be broken into two lines,
-  ```
+  ```java
   // compile-time error
   "He
   llo"
   ```
 - Can be broken into 2 lines by using plus(`+`),
-  ```
+  ```java
   // valid
   "He"+
   "llo"
@@ -37,7 +34,7 @@
 - A character can also be represented as a `Unicode escape` in the form `\uxxxx`,
   - `x` is a hexadecimal digit,
 - Ex: See `escapeTest()` in `Test.java`,
-    ```
+    ```java
     private static void escapeTest(){
         System.out.println( "hello" ); // hello
     
@@ -55,17 +52,16 @@
     ```
 - Not used too much,
 
-
 ## CharSequence
 - Is an `interface` in the `java.lang package`,
 - `String`, `StringBuffer`, and `StringBuilder` implements `CharSequence` interface. So, these can be used wherever `Charsequence` is required,
 - Ex: See `charSequenceTest()` in `Test.java`,
-    ```
+    ```java
     private static void printWithLength(CharSequence cs){
         System.out.println(cs+" -> "+cs.length());
     }
     ```
-    ```
+    ```java
     private static void charSequenceTest(){
         String name = new String("Hello S");
         printWithLength(name); // Hello S -> 7
@@ -82,7 +78,7 @@
 ## Creating String Objects
 - `String` class contains `many constructors` that can be used for creating `String` object,
 - Ex(Very few constructor): See `stringConstructorTest()` in `Test.java`,
-    ```
+    ```java
     private static void stringConstructorTest(){
         String name;
     
@@ -100,20 +96,19 @@
         System.out.println(name); // 4ab
     }
     ```
-  
 
 ## Some properties of String
  - Every `String` has an `integer` length,
    - `length()` method returns number(`int`) of character on that `String` object,
    - Ex:
-     ```
+     ```java
      String name = new String("Hello March");
      System.out.println(name.length()); // 11
      ```
  - All string `literals` are objects of the `String` class,
    - All `methods` of the `String` class can be used with `String literals` directly,
    - Ex:
-     ```
+     ```java
      String msg = "This is Pluto"; // "This is Pluto" is an object
      System.out.println(msg.length()); // 13
      System.out.println("This is Pluto".length()); // 13
@@ -124,7 +119,7 @@
 - Can be shared without worrying about them getting modified,
 - Same String object can be referred by multiple variables, since immutable,
 - Ex: See `immutableTest()` in `Test.java`,
-    ```
+    ```java
     private static void immutableTest(){
     
         String var1 = "Test Case";
@@ -136,7 +131,6 @@
     ```
 - Whenever you modify a `String`, new `String` is created with the result, performed on 1st `String`,
 
-
 ## Comparing Two Strings
 - Remember, strings are object. So `==` can't be used for comparing,
 - `int compareTo(String)` can be used for comparing two string objects,
@@ -147,7 +141,7 @@
   - Negative integer(`<0`): `1st` one is lexicographically `smaller` than `2nd`,
   - It keeps comparing character by character, if different character is found, it returns `ascii value of that char in 1st` - `ascii value of that char at 2nd`
 - Ex: See `stringCompareTo()` in `Test.java`,
-    ```
+    ```java
     private static void stringCompareTo(){
         String val1 = "abc";
         String val2 = "abc";
@@ -174,7 +168,6 @@
     - Doesn't check any other character,
 
 
-    
 ## String Pool
 - Java maintains a pool of all `string literals`,
 - To minimize the memory usage and for better performance,
@@ -187,14 +180,14 @@
     - If it finds a match in the `string pool`, 
       - It replaces the `string literal` with the reference of the `String object` found in the pool,
 - For below statement:
-    ```
+    ```java
     String str = new String("Hello"); // <---------(a)
     ```
   - Here `"Hello"` is a `String literal`,
   - `"Hello"` is not in `String pool` initially,
   - So `String object`(say `x`) having content `Hello` will be created and added to `String pool`,
   - Above statement will be like:
-    ```
+    ```java
     String str = new String(x);
     ```
   - Since we are using `new String()`, So another `String object` will be created on the `heap memory`,
@@ -214,7 +207,7 @@
   - Total `3` `String object` will be created,
 
 - Another ex: See `stringPoolTest()` in `Test.java`,
-    ```
+    ```java
     private static void stringPoolTest(){
         String rohit = "Rohit"; // added to pool
         String salma = "Salma"; // added to pool
@@ -253,7 +246,7 @@
   - If `str` is found in pool, then returns that reference,
   - If `str` isn't found in pool, then create an object in the `String pool` & return reference of the created object,
   - Ex: See `internTest()` in `Test.java`,
-    ```
+    ```java
     private static void internTest(){
         String var = "My variable";
         String s2 = (var + " is actually pooled").intern(); // added to pool
@@ -264,15 +257,6 @@
     ```
 
 >> Actually you don't need to understand all of these
-
-
-    
-    
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
