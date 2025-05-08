@@ -1,4 +1,5 @@
 
+# Formatter
 
 ## Formatting Numbers
 - Two classes can be used to format and parse numbers,
@@ -9,7 +10,7 @@
     - Used to format a number in a format `of your choice` in a particular `locale`,
     - Provides advanced formatting,
 - Ex(`NumberFormat`): see `numberFormat()` in `Test.java`,
-    ```
+    ```java
     private static void numberFormat(){
     
         //------------   default locale USA -----------
@@ -38,7 +39,7 @@
     }
     ```
 - Ex(`DecimalFormat`): see `decimalFormat()` in `Test.java`,
-    ```
+    ```java
     private static void decimalFormat(){
         double num = 175.570354;
     
@@ -78,7 +79,7 @@
 - `java.util.Formatter` class supports `printf-style` formatting,
 - Similar to `printf()` in `C`,
 - Ex: See `printfStyleFormatting()` in `Test.java`,
-  ```
+  ```java
   private static void printfStyleFormatting(){
       // Formatting strings
       System.out.printf("%1$4s, %2$4s, and %3$6s %n", "Fu", "Hu", "Lo"); //  Fu,   Hu, and     Lo
@@ -99,11 +100,6 @@
   - `s` means `String`,
   
 >> It's disturbing. Learn yourself if you want more. Not really useful.
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
@@ -116,4 +112,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    

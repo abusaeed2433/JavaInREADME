@@ -1,7 +1,5 @@
 
-# Regex part-2
-
-> Codes are in `partTwo` package
+# Regex - part2
 
 ## Beware of Backslashes
 - `\w` means word character,
@@ -13,7 +11,7 @@
     - For expressing it, you need to use two `backslashes`,
     - Regex for above will `\\[[0-9]\\]]`,
 - Ex: See `backslashTest()` in `Test.java`,
-  ```
+  ```java
   private static void backslashTest(){
   
       //String regex = "\\[[0-9]\\]"; // valid
@@ -36,15 +34,14 @@
   }
   ```
   Output
-  ```
+  ```text
   [0] -> passed
   [1 -> failed
   [s] -> failed
   2] -> failed
   [5] -> passed
-  [O] -> failed. This capital 'O', not zero
+  [O] -> failed. This is capital 'O', not zero
   ```
-
 
 ## Quantifiers in Regular Expressions
 - We can specify `number of times` a character appear,
@@ -64,7 +61,7 @@
   - Will match word of the format `fName lName`. where, 
   - `fName` is at least `3` letter, and 
   - `lName` is `5 to 10` letters
-  ```
+  ```java
   private static void quantityTest(){
       String regex = "[a-zA-Z]{3,} [A-Za-z]{5,10}";
       Pattern pattern = Pattern.compile(regex);
@@ -86,7 +83,7 @@
   }
   ```
   Output:
-  ```
+  ```text
   Ibne Sina -> failed
   Shujoy Kundu -> passed
   Hasib Hasan Hasib Hasan -> failed
@@ -97,7 +94,7 @@
 - Will match word
   - consists of `small letter` and
   - contain small `s` only one or not at all
-  ```
+  ```java
   private static void quantityTest2(){
       String regex = "[a-rt-z]*s?[a-rt-z]*";
       Pattern pattern = Pattern.compile(regex);
@@ -126,7 +123,6 @@
   s -> passed
   ```
 
-
 ## Matching Boundaries
 - Finding location of match,
 - Ex: Replacing `apple` with `orange`:
@@ -149,7 +145,7 @@
   - Between a non-word character and end of the string,
 - For matching `apple` in earlier sentence regex should be `\bapple\b`,
 - Ex-1: See `boundaryMatcher1()` in `Test.java`,
-  ```
+  ```java
   private static void boundaryMatcher1(){
       String input = "I have an apple and five pineapples";
   
@@ -161,7 +157,7 @@
   }
   ```
 - Ex-2: See `boundaryMatcher1Manually()` in `Test.java`,
-  ```
+  ```java
   private static void boundaryMatcher1Manually(){
       String input = "apple, I have an apple, and five pineapples & two more apple";
   
@@ -175,7 +171,7 @@
   }
   ```
   Output:
-  ```
+  ```text
   apple from 0 to 5
   apple from 17 to 22
   apple from 55 to 60
@@ -203,7 +199,7 @@
   - Will find phone number,
   - Find code & number from that phone number,
   - Format the number & print
-  ```
+  ```java
   private static void groupTest2(){
       String phones = "+8801792101111, +8801234567890, +8804324567890,+2101234";
   
@@ -223,18 +219,12 @@
   }
   ```
   Output:
-  ```
+  ```text
   +880 - 1792101111
   +880 - 1234567890
   +880 - 4324567890
   +210 - 1234
   ```
-
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">

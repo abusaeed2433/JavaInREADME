@@ -1,7 +1,5 @@
 
-# Regex part-1
-
-> Codes are in `partOne` package
+# Regex - part1
 
 <p align="center">
     <img src="../files/regex_intro.jpg" height="300px" alt="from nixCraft facebook">
@@ -13,7 +11,7 @@
   - To validate the sequence of characters, 
   - To search through the sequence of characters, 
   - To replace the sequence of characters etc
-- For example: We may validate user given email address using it,
+- For example: We may validate user given email address using it;
 - For validating a pattern, We need
   - To recognize the pattern,
   - A way(`Regular expression`) to express the recognized pattern,
@@ -54,11 +52,11 @@
   - A `whitespace` character,
   - Same as `[ \t\n\x0B\f\r]`,
   - Includes:
-    - A space(` `) see first one before `\t`,
+    - A space(` `). See first one before `\t`,
     - A tab(`\t`),
     - A new line(`\n`),
     - A vertical tab(`\x0B`), 
-    - A form feed(`\f`, 
+    - A form feed(`\f`), 
     - A carriage return (`\r`),
   - Ex: ` `(space),
 - `\S`:
@@ -83,7 +81,7 @@
 
 ## Ex-1 (Basic): See `basicRegex()` in `Test.java`,
 - Everything will be explained later,
-   ```
+   ```java
     private static void basicRegex(){
     
         String regex = "[ABO][+-]";
@@ -138,7 +136,7 @@
   - `static Pattern compile(String regex)`,
   - `static Pattern compile(String regex, int flags)`
 - Ex:
-    ```
+    ```java
     String regex = "[ABO][+-]";
     Pattern pattern = Pattern.compile(regex);
     Pattern pattern1 = Pattern.compile(regex,Pattern.CASE_INSENSITIVE);
@@ -149,7 +147,7 @@
 - It(`Matcher`) has no `public constructor`,
 - `matcher()` method of the `Pattern` class is used to get an instance of the `Matcher` class,
 - Ex:
-    ```
+    ```java
     String regex = "[ABO][+-]";
     Pattern pattern = Pattern.compile(regex);
             
@@ -157,7 +155,6 @@
     Matcher matcher = pattern.matcher(input);
     ```
   
-
 ## Matching the Pattern
 - Following methods are available for matching:
   - `find()`:
@@ -174,7 +171,7 @@
   - `group()`:
     - Returns the found `string` by the previous successful `find()` method call,
 - Ex: See `performRegexOperation1()` in `Test.java`,
-    ```
+    ```java
     private static void performRegexOperation1(){
     
         String regex = "[ABO][+-]";
@@ -185,7 +182,7 @@
     
         while (matcher.find()){
             String bg = matcher.group(); // or
-            String sameBg = input.substring(matcher.start(),matcher.end());
+            String sameBg = input.substring(matcher.start(), matcher.end());
     
             System.out.println(bg+" = "+sameBg);
         }
@@ -199,12 +196,6 @@
     O- = O-
     B- = B-
     ```
-
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
