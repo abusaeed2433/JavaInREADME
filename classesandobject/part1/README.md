@@ -1,14 +1,11 @@
-
-
-# Classes and Object part-1
-> Codes are in `partOne` package
+# Classes and Object - part1
 
 ## class
 - Basic unit of Object-Oriented Programming paradigm(pattern),
 - Ex: `Animal` is a class and `tiger` is an object of `Animal` class,
 
 ## Structure of JAVA class
-```
+```java
 <<modifiers>> class <<class name>> {
     // Body of the class goes here
 }
@@ -22,9 +19,9 @@
 - Body of the class:
   - Contains `fields`, `methods`,
 - Ex: (`Hooman.java`)
-  ```
+  ```java
   public class Hooman {
-    ...
+    // ...
   }
   ```
   - has `public` modifier,
@@ -74,7 +71,7 @@
 ## Understanding components
 - `this` refers to `current instance`. More details is discussed next section,
 - See `Hooman.java`,
-  ```
+  ```java
   public class Hooman {
       // Field - 2 Class variables
       public static final String SPECIES;
@@ -121,7 +118,7 @@
 - Represent `behavior` of objects of the class,
 - Is a named `block of code`,
 - Structure:
-  ```
+  ```java
   <<modifiers>> <<return type>> <<method name>> (<<parameters list>>) <<throws clause>> {
     // Body of the method goes here
   }
@@ -129,7 +126,7 @@
 - `Formal parameters` of a method are treated as local variables,
 - `throws` is optional,
 - Ex:
-  ```
+  ```java
   public void setAge(int age) {
      if(age < 0 || age < this.age) return;
      this.age = age;
@@ -148,7 +145,7 @@
       - `order`,
   - `Modifiers`, `return-type`, and `parameter names` aren't part of the `signature`,
   - Ex:
-    ```
+    ```java
      public int add(int num1, int num2){
         return num1+num2;
      }
@@ -164,13 +161,13 @@
 - Used to implement `behavior of the objects` of the class,
 - Must be `called using object`,
 - Ex: See `showSpecificCharacter()` in `Hooman.java`,
-  ```
+  ```java
   public void showSpecificCharacter(){
       System.out.println("Name is => "+name);
   }
   ```
   Accessing like this
-  ```
+  ```java
   Hooman anik = new Hooman("Anik",22);
   anik.showSpecificCharacter(); // Name is => Anik
   ```
@@ -181,7 +178,7 @@
 - Can be called using both `object` or `Class name`(Recommended) itself,
 - Can't access instant variables here, guess why?
 - Ex: See `showSomeCharacter()` in `Hooman.java`,
-  ```
+  ```java
   public static void showSomeCharacter(){
     System.out.println("General characteristics");
     //System.out.println(name);//can't access instant variable here
@@ -198,7 +195,7 @@
 
 ## Special `main()` method
 - Special method having `public`,`static`, `void`, method name `main` and having a `String array` as parameter,
-  ```
+  ```java
   public static void main(String[] args) {
     // entry point of execution
   }
@@ -208,7 +205,7 @@
 - You don't need to write main method in a class if you don't want it to start from here,
 - You can also call `main()` method just like other method,
 - Ex: See `Test.java`, 
-  ```
+  ```java
   public class Test {
       public static void main(String[] args) {
          ...
@@ -221,7 +218,7 @@
 - `Instance` method is invoked on an `instance of the class` using dot(`.`) notation,
 - `Class method` is invoked on `Class name` using dot(`.`) notation,
 - Ex: See `main()` in `Test.java`,
-  ```
+  ```java
   Hooman anik = new Hooman("Anik",22);
   anik.showSpecificCharacter(); // instance
   
@@ -233,7 +230,7 @@
 - Constructor name is the same as the simple name of the class,
 - Doesn't have return type,
 - Basic Structure(can have `throws` clause also):
-  ```
+  ```java
   <<Modifiers>> <<Constructor Name>>(<<parameters list>>){
    // Body of constructor goes here
   }
@@ -247,7 +244,7 @@
 - `default constructor` only satisfies logic so that we can create object,
 - You can't declare a constructor `static`. Remember `static` is part of class not object,
 - Ex: See `Bird.java`,
-  ```
+  ```java
   public class Bird {
       ...
       // constructor - 1
@@ -279,7 +276,7 @@
   }
   ```
   Creating object like this: See `birdTest()` in `Test.java`:
-  ```
+  ```java
   private static void birdTest(){
       Bird deadBird = new Bird(); // 1
       deadBird.printDetails(); // Unknown -> Not found -> false
@@ -301,21 +298,12 @@
 - When you create an object using `new` keyword, it allocates memory for each `instance field` of the class,
 - Java runtime takes care of memory allocation, you don't need it,
 - Creating object and calling method:
-  ```
+  ```java
   Hooman saeed = new Hooman("Saeed",21);
   System.out.println(saeed.isAdult()); // true
   ```
 
-
 >> THERE IS NO SHORTCUT OTHER THAN PRACTICING
-
-
-    
-    
-    
-    
-    
-
 
 
 <!-- bottom_nav_bar_1243 -->

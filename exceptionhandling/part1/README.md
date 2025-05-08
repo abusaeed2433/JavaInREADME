@@ -4,7 +4,7 @@
 ## Exception
 - A condition that may arise during the execution when a normal path of execution is not defined.
 - Ex: See `firstTest()` in `Test.java`
-    ```
+    ```java
     private static void firstTest(int y){
         int x = 10;
         int result = (x/y); // will throw exception if y == 0
@@ -14,7 +14,7 @@
 - In above example, 3rd line inside method won't be executed because `2nd line break normal execution`, since integer can't be divided by zero(`0`),
 - Above example can be written using `if-else`, but it will make code complex if there are many such condition,
 - Equivalence `if-else` code(See `firstTestBadSolution()` in `Test.java`):
-    ```
+    ```java
     private static void firstTestBadSolution(int y){
         int x = 10;
     
@@ -28,7 +28,7 @@
     }
     ```
 - Solution to above problem(See `firstTestSolution()` in `Test.java`): 
-    ```
+    ```java
     private static void firstTestSolution(int y){
         int x = 10;
         try {
@@ -41,7 +41,7 @@
     }
     ```
 - Structure:
-    ```
+    ```java
     try {
          // code that may cause error
     }
@@ -58,7 +58,7 @@
 - We can have multiple catch block,
 - Multiple catch blocks for a try block must be arranged from the most specific exception type to the most generic exception type. Otherwise, a compile-time error occurs,
 - Ex: (Compile time error) because `ArithmeticException` is child of `RuntimeException`,
-    ```
+    ```java
     private static void catchExceptionOrder(int y, String message, String filePath){
         try{
         ...
@@ -71,7 +71,7 @@
     }
     ```
 - Valid code: (See `catchExceptionOrder(int,String,String)` in `Test.java`)
-    ```
+    ```java
     private static void catchExceptionOrder(int y, String message, String filePath){
         try{
             ...
@@ -84,7 +84,7 @@
     }
     ```
 - Multiple catch block can also be written like this: See `catchMultipleException()` in `Test.java`,
-  ```
+  ```java
   private static void catchMultipleException(int y, String message, String filePath){
       try {
           ...
@@ -125,7 +125,7 @@
   - Using catch block(previous one),
   - Adding in method signature,
 - Two ways are shown: See `handleChecked1()` & `handleChecked2()` in `Test.java`,
-    ```
+    ```java
     private static void handleChecked1(String filePath){
         try {
             FileReader fileReader = new FileReader(filePath);
@@ -137,7 +137,7 @@
     }
     ```
     or
-    ```
+    ```java
     private static void handleChecked2(String filePath) throws IOException{
         FileReader fileReader = new FileReader(filePath);
         printFile(fileReader);
@@ -145,7 +145,7 @@
     }
     ```
 - Can be called using: See `callHandleChecked()` in `Test.java`,
-    ```
+    ```java
     private static void callHandleChecked(){
         handleChecked1("invalid");
     
@@ -163,22 +163,24 @@
 ## Throwing an Exception
 - You can also throw exception if you want,
 - Ex: See `throwMyException()` in `Test.java`,
-    ```
+    ```java
     private static void throwMyException(int age) throws Exception{
         if(age < 18) throw new Exception("You are baccha");
     
         System.out.println("fine");
     }
     ```
-    Can be called like: See `testThrow()` in `Test.java`,
-    ```
+    Can be called like: See `testThrow()` in `Test.java`.
+    Without exception:
+    ```java
     try {
         throwMyException(20); // fine
     }catch (Exception e){
         System.out.println(e.getMessage());
     }
     ```
-  ```
+    With exception:
+    ```java
     try {
         throwMyException(12);
     }catch (Exception e){
@@ -189,7 +191,7 @@
 ## Creating own Exception class
 - Custom exception class can be created by inheriting/extending existing class,
 - Ex: See (`MyException.java`, `MyMessage.java` and `testMyException()` in `Test.java`) 
-  ```
+  ```java
   private static void testMyException(MyMessage myMessage) throws MyException{
       if(myMessage.getMessage() == null){
           throw new MyException(myMessage);
@@ -201,7 +203,7 @@
 ## finally block
 - Gets executed no matter how the code in the try and catch blocks,
 - Ex: See `finallyTest()` in `Test.java`,
-    ```
+    ```java
     private static void finallyTest(String filePath){
         FileReader fileReader = null;
         try {
@@ -217,14 +219,6 @@
         }
     }
     ```
-
-    
-    
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">

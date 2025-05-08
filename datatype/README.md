@@ -49,24 +49,19 @@
   - Ex: `String s = new String("Saeed");`, 
     - `Space` is allocated separately for `variable` and the `object` it is referring,
   - Be alert while modifying object of reference type inside method,
-    ```
+    ```java
     private static void printHumanData(Human human){
       System.out.println(human.getName()+" -> "+human.getAge());
       human.setAge(26); // will modify main object
     }
     ```
     Using like this:
-    ```
+    ```java
     Human human = new Human("Saeed",21);
     printHumanData(human); // Saeed -> 21
     System.out.println(human.getAge()); // 26
     ```
     - These are discussed briefly in `Classes and Object` section,
-
-    
-    
-    
-
 
 
 <!-- bottom_nav_bar_1243 -->

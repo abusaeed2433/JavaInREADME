@@ -14,7 +14,7 @@
   - Using constructors,
   - Using the valueOf() factory methods,
   - Ex:
-      ```
+    ```java
     Integer num1 = new Integer(120);
     Integer num2 = Integer.valueOf(120);
     Integer num3 = 120; // Boxing. Later
@@ -22,7 +22,7 @@
 - `valueOf()` is preferred over constructors as this method caches some objects for reuse,
 - The new operator always creates a new object but,
 - `valueOf()` caches wrapper objects for primitive values between -128 and 127,
-    ```
+    ```java
     Integer n1 = Integer.valueOf(20);
     Integer n2 = Integer.valueOf(20);
     
@@ -58,21 +58,21 @@
   - Wrapper to primitive,
   - Unwrapping from wrapper object to its corresponding primitive data type, is called unboxing.
 - Ex:
-    ```
+    ```java
     Integer n = 200; // Boxing or AutoBoxing
     int a = n; // Unboxing
     ```
 - Every primitive can be converted into object, But opposite is not true. why?
 - Remember reference variable can be `null` and there is no value for `null` in primitive type, so `NullPointerException` is thrown,
 - Ex:
-    ```
+    ```java
     Integer num4 = null;
     int num5 = num4; // error
     ```
 - ### Overloaded method
   - Nothing special, think normally,
   - Ex:
-    ```
+    ```java
     private static void printNumber(Integer num){
         System.out.println("Integer -> "+num); 
     }
@@ -82,7 +82,7 @@
     }
     ```
   - Calling like:
-    ```
+    ```java
     printNumber(1002); // int -> 1002
     Integer val = 1002;
     
@@ -95,7 +95,7 @@
     - If both operands are reference types, their references are compared, 
     - In these two cases, no autoboxing/unboxing takes place,
     - Ex:
-       ```
+       ```java
         Integer num1 =  1000;
         Integer num2 =  1000;
         System.out.println(num1 == num2); // false, reference are different
@@ -105,14 +105,6 @@
        ```
 
 >> AVOID CLEVER CODE
-
-    
-    
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">

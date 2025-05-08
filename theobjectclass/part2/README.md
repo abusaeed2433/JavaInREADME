@@ -9,7 +9,7 @@
     - Doesn't copy the content of the object that `y` refers to,
 - For cloning , you must implement `Cloneable` interface to your class. Why? See `Marker interface` in interface section,
 - `clone()` method in `Object` class is as follows:
-  ```
+  ```java
   protected Object clone() throws CloneNotSupportedException
   ```
 - `clone()` method
@@ -21,7 +21,7 @@
   - It will make a `bitwise copy` of the original object and return the reference of the copy,
   
 - Ex-1: See `Student.java`,
-  ```
+  ```java
   public class Student implements Cloneable{
       ...
       @Override
@@ -35,7 +35,7 @@
   }
   ```
   Calling like this: See `cloneTest()` in `Test.java`,
-  ```
+  ```java
   private static void cloneTest(){
   
       Student who = new Student(269,"who",23,173);
@@ -54,7 +54,7 @@
   As you can see, after changing cloned object, it is not affecting original object,
 
 - Ex-2: See `Cat.java`, `Human.java`,
-  ```
+  ```java
   public class Human implements Cloneable{
       private String name;
       private Cat cat;
@@ -78,7 +78,7 @@
   }
   ```
   Calling like this: See `cloneTest2()` in `Test.java`,
-  ```
+  ```java
   private static void cloneTest2(){
       Human tomal = new Human("Tomal","Loki");
   
@@ -101,7 +101,7 @@
   As you can see even after cloning the main object, when we change the nested object, actual object is affected.
 - For solving this issue, you must handle this manually.
 - See commented `clone()` of `Human.java`:
-  ```
+  ```java
   @Override
   protected Object clone() {
       try {
@@ -115,7 +115,7 @@
   }
   ```
   Result is(Perfectly fine):
-  ```
+  ```java
   private static void cloneTest2(){
       Human tomal = new Human("Tomal","Loki");
       System.out.println(tomal); // owner: Tomal, catName: Loki
@@ -140,7 +140,7 @@
 - It gives a trigger before destroying object by calling `finalize()` method,
 - `finalize()` method:
   - Structure:
-    ```
+    ```java
     protected void finalize() throws Throwable {
     ```
   - Doesn't do anything,
@@ -163,7 +163,7 @@
   - Testing an immutable class is easy,
   - Thread safe since can't be changed,
 - Ex of mutable class: See `immutableTest()` in `Test.java`,
-  ```
+  ```java
   private static void immutableTest(){
       Cat cat = new Cat("Oscar");
       System.out.println(cat.getName()); // Oscar
@@ -173,7 +173,7 @@
   }
   ```
 - Immutable version of `Cat` class will be like this. See `GammaCat.java`,
-  ```
+  ```java
   public class GammaCat {
       private final String name; // <------- final optional though, since private and no setter
   
@@ -218,4 +218,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    

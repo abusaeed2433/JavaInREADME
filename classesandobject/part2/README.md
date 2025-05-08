@@ -1,6 +1,5 @@
 
-# Classes and Object part-2
-> Codes are in `partTwo` package
+# Classes and Object - part2
 
 ## Local variable
 - Variable declared inside `method`, `constructor`, `block`,
@@ -10,7 +9,7 @@
 - Must be declared before it is used,
 - If variables having same name found, local variable get precedence,
 - See `LocalVariable.java` for full code,
-  ```
+  ```java
   public class LocalVariable {
       ...
       private int num; // global, value = 0
@@ -33,14 +32,14 @@
 - A `special reference type` called `null type`,
 - It has no name,
 - `Assignment compatible` with any other `reference` type. Ex:
-  ```
+  ```java
   String name = null; // ok
   Integer number = null; // ok
   Hooman none = null; // ok
   int count = null; // error. int is not reference type. Remember?
   ```
 - After making `sh = null;`, the object `sh` was referring will be destroyed by JVM, since it is no longer accessible.
-  ```
+  ```java
   Hooman sh = new Hooman("sh",22);
   sh = null;
   ```
@@ -50,7 +49,7 @@
 - Reference to the `current instance` of a class. (Alert it's for `instance`, not class),
 - Can be used only in the context of an `instance/object`,
 - Ex: See `TriState.java`,
-  ```
+  ```java
   public class TriState {
       ...
       private StateEnum state = StateEnum.FIRST; // will be discussed later
@@ -63,7 +62,7 @@
   }
   ```
 - Creating instance of above class
-  ```
+  ```java
   TriState triState = new TriState(SECOND);
   System.out.println(triState.state); ---- (b)
   ```
@@ -80,7 +79,7 @@
     - Can be assigned while declaration or later,
     - If you do not initialize a final variable at the time of its declaration, such a variable is known as a `blank final` variable,
     - Ex: 
-      ```
+      ```java
       final int total;
       ```
   - `Class`:
@@ -90,7 +89,7 @@
 
 ## final local variable && final parameter
   - Ex: See `getArea()` of `Test.java`:
-    ```
+    ```java
     private static double getArea(final double r){ // final parameter
        final double pi = 3.1415; // final local variable
        //pi = 3; // error
@@ -106,7 +105,7 @@
   - Don't be confused. Just remember that you can only `assign value at once`. If you try to reassign it, you will get error,
 - All `blank final` variables and `final reference variables` are runtime constants. i.e. they are calculated at runtime,
 - Ex: See `Circle.java`,
-  ```
+  ```java
   public final class Circle {
   
       public static final double PI = 3.14159; // final
@@ -137,7 +136,7 @@
 - Same like previous,
 - Good practice to use `capital letter` for variable naming,
 - Ex:
-  ```
+  ```java
   public static final double PI = 3.14159;
   ```
 
@@ -147,7 +146,7 @@
 - 3dots(`...`) is used,
 - We can pass any number of arguments, parameter will work like `array`. But we don't have to pass array explicitly,
 - Ex: See `max()` in `Test.java`,
-  ```
+  ```java
   private static int max(int... arr){
       if(arr.length == 0) return 0;
       int mx = Integer.MIN_VALUE;
@@ -158,7 +157,7 @@
   }
   ```
   Using like this:
-  ```
+  ```java
   System.out.println( max() ); // 0
   System.out.println( max(1,22) ); // 22
   System.out.println( max(1,2,3,4,5,6,7,8,10) ); // 10
@@ -166,34 +165,34 @@
 - Isn't it awesome?
 - There is `2` restriction:
   - A varargs method can have `maximum one varargs`,
-     ```
+     ```java
      // n1 has infinite length, so n2 is not needed. error
       void m1(String str, int...n1, int...n2) {
-       ...
-     }
+         ...
+      }
      ```
   - The varargs `must be the last argument` in the argument-list. Same reason even though parameter type is different.
-     ```
+     ```java
      void m2(int...n1, String str) {
       ...
      }
     ```
     This is perfectly valid: See `findMinMax()` `Test.java`,
-     ```
+     ```java
      private static int findMinMax(boolean findMax, int ...arr){...}
      ```
 
 ## Generic class
 - Allows for writing `true polymorphic` code(Works for any types),
 - Structure:
-  ```
+  ```java
   public class Wrapper<T> {
    // Code for the Wrapper class goes here
   }
   ```
 - `T` is a `type variable`. It can be of any type, but must be reference type,
 - Ex: See `MyList.java`,
-  ```
+  ```java
   public class MyList <T>{
       private final List<T> list = new ArrayList<>();
       
@@ -208,7 +207,7 @@
   }
   ```
   Using like this: See `simpleGenericTest()` in  `Test.java` ,
-  ```
+  ```java
   private static void simpleGenericTest(){
     MyList<Integer> myList = new MyList<>();
     //MyList myList = new MyList<>(); // ok but not recommended.
@@ -221,18 +220,8 @@
   
     System.out.println( myList.get(1) ); // 32
   }
-  
   ```
 - Above one is a simple example. Learn more by yourself if you want to,
-
-
-    
-    
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">

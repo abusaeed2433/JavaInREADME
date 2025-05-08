@@ -1,7 +1,6 @@
 
 # Operator
 
-
 ## Introduction
 - A symbol that performs a specific kind of operation on one, two, or three operands, and produces a result,
 - Operator based on the number of operands they operate on
@@ -12,7 +11,7 @@
 
 ## Assignment operator(`=`):
 - `Compile time error` will be shown if right side is not assignment compatible to left side. Ex:
-  ```
+  ```java
   float f = 1.19F;
   int i = 15;
   i = f; // compile time error.
@@ -25,7 +24,7 @@
   - `num = 25;` is called a statement.
 
 - `Declaration`, `Initialization`, `Assignment`
-  ```
+  ```java
   int count; // Declaration
   count = 0; // assignment
   int value = 5; // initialization
@@ -36,12 +35,12 @@
   - `double > float > long > int`. It means that,
   - Suppose `c` is of double and `b` is of long, then `b @ c` will be double. Got it?
 - Ex:
-  ```
+  ```java
   byte b1;
   b1 = 5; // ok --------------------(a)
   ```
   But,
-  ```
+  ```java
   byte b1;
   byte b2 = 2; // ok
   byte b3 = 3; // ok
@@ -59,7 +58,7 @@
 
 ## Unary plus(`+`) and Unary minus(`-`):
 - Ex:
-  ```
+  ```java
   byte b1 = 10;
   byte b2 = +5;
   b1 = b2; // Ok. byte to byte assignment
@@ -80,15 +79,14 @@
   - increment, then
   - others operation,
 - Ex-1:
-  ```
+  ```java
   int i = 100;
-  ```
-  ```
   int j = ++i + 15;
   ```
-  - `i = 101`, `j = 116`. Remember `pre increment` is incremented first,
+  `i = 101`, `j = 116`. Remember `pre increment` is incremented first,
+
 - Ex-2: 
-  ```
+  ```java
   int i = 100;
   int j = i++ + 15;
   ```
@@ -99,7 +97,7 @@
   j = 115; // i = 101
   ```
 - Ex-3:
-  ```
+  ```java
   int i = 15;
   i = i++;
   ```
@@ -121,7 +119,7 @@
 - For `reference` operands, it returns true if the both operands `refer to the same object` in memory,
 - Alert while using these operators with reference type,
 - Ex:
-  ```     
+  ```java
   Kuetian st1 = new Kuetian(75,"CSE","Pantho");
   Kuetian st2 = new Kuetian(57,"CSE","Saeed");
   Kuetian st3 = new Kuetian(57,"CSE","Saeed");
@@ -134,7 +132,7 @@
   System.out.println(st1==st3); // true, since same object
   ```
 - Let's get confused a little
-  ```
+  ```java
   Integer num1 = 100;
   Integer num2 = 100;
   System.out.println(num1==num2); // true
@@ -143,7 +141,8 @@
   Integer num4 = 10000;
   System.out.println(num3==num4); // false
   ```
-  - Just remember this `num1`,`num2`, `num3`, `num4` are object of class `Integer`. Rest will be discussed later in different section.
+  Just remember this `num1`,`num2`, `num3`, `num4` are object of class `Integer`. Rest will be discussed later in different section.
+
 - So, for reference data type, always use `obj1.equlas(obj2)` instead of `==`.
   ```
   Integer num3 = 10000;
@@ -157,12 +156,10 @@
 - Logical OR Operator (`|`),
 - Logical Short-Circuit OR Operator (`||`),
 - Logical XOR Operator (`^`),
-- Compound Boolean Logical Assignment Operators,
-  - `&=`, `|=`, `^=`
-
+- Compound Boolean Logical Assignment Operators: `&=`, `|=`, `^=`
 - `Logical` and `short circuit` operator do same thing, only difference is short-circuit operator doesn't execute other condition if not needed,
 - Ex:
-  ```
+  ```java
   int i = 24;
   int j = 48;
   int k = 57;
@@ -187,8 +184,8 @@
 
 ### Ternary Operator (`? :`)
 - Ex:
-  ```
-  boolean-expression ? true-expression : false-expression
+  ```java
+  // boolean-expression ? true-expression : false-expression
   int a = 5;
   int b = 55;
   int mx = a>b ? a : b;
@@ -243,14 +240,6 @@
 
 ### Java does not let developers overload operators in programs
 
-    
-    
-    
-    
-    
-
-
-
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
 <a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/datatype/">
@@ -262,4 +251,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    

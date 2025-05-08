@@ -8,7 +8,7 @@
   - Wrapping exception into another exception,
   - Hiding exception details from client,
 - Structure:
-    ```
+    ```java
     try {
      ...
     }
@@ -18,7 +18,7 @@
     ```
 - Rethrown exceptions must be caught from another outer `try-catch` block,
 - Ex: See `rethrowException()` in `Test.java`,
-  ```
+  ```java
   private static void rethrowException(int y){
       try{
           ...
@@ -28,7 +28,7 @@
   }
   ```
   When calling(See `testRethrow()` in `Test.java`),
-  ```
+  ```java
   try {
       rethrowException(0);
   }catch (Exception e){
@@ -36,7 +36,7 @@
   }
   ```
 - It can also be handled like this:
-  ```
+  ```java
   try { // outer, will catch rethrown exception
       try { // innner
           ...
@@ -49,7 +49,7 @@
   ```
 - Location of exception can also be hidden by using `fillInStackTrace()` method,
 - Ex: See `m2()`, `m1()` & `hideTrace()` in  `Test.java`,
-  ```
+  ```java
   public static void hideTrace() {
       try {
           m1();
@@ -58,8 +58,6 @@
           e.printStackTrace(); // hidden original trace
       }
   }
-  ```
-  ```  
   public static void m1() throws Exception {
       try {
           m2();
@@ -69,8 +67,6 @@
           throw e; // rethrowing
       }
   }
-  ```
-  ```
   public static void m2() throws Exception {
       throw new Exception("An error has occurred."); // just throw
   }
@@ -96,7 +92,7 @@
 ## Throwing too Many Exceptions
 - Can be thrown as many as exception you want,
 - Ex: See `throwMultiple()` in `Test.java`,
-  ```
+  ```java
   private static void throwMultiple(Integer y) throws RuntimeException{
       if(y == null) throw new NullPointerException("Can't be null");
   
@@ -131,7 +127,7 @@
 - For closing object of any resources such as `File`,
 - It can be done using `finally` also,
 - Structure
-  ```
+  ```java
   try (AnyResource aRes = create the resource...) {
    // Work with the aRes here
   }
@@ -139,7 +135,7 @@
 - A resource that you specify in a try-with-resources must be of the type java.lang.AutoCloseable,
 - When the program exits the try-with-resources block, the `close()` method of all the resources is called automatically,
 - Equivalent code using finally
-  ```
+  ```java
   AnyResource aRes;
   try {
     aRes = create the resource...;
@@ -155,7 +151,7 @@
   ```
 - So, `try-with-resource` make code simpler,
 - Ex: see `MyResource.java` & `Test2.java`
-  ```
+  ```java
   public class MyResource implements AutoCloseable{
       private MyMessage myMessage;
       ...
@@ -171,7 +167,7 @@
   }
   ```
   See `testTryWithResource()` in `Test.java`,
-  ```
+  ```java
   private static void testTryWithResource(){
       try(
               MyResource res1 = new MyResource("Hello world!",1,"Saeed");
@@ -189,7 +185,7 @@
   }
   ```
 - Output
-  ```
+  ```text
   Saeed
   None
   Closed None
@@ -210,4 +206,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    

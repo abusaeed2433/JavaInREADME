@@ -11,7 +11,7 @@
   - Since variable of superclass can hold object of its subclasses. So,
   - A variable of `Object` class can hold a reference of an object of any class,
   - Ex: See `ruleTest1()` in `Test.java`,
-    ```
+    ```java
     private static void ruleTest1(){
     
         Object myObj = new Object();
@@ -55,7 +55,7 @@
 ## `getClass()` method
 - Returns the `reference` of the Class object,
 - Ex: See `testGetClass()` in `Test.java`,
-  ```
+  ```java
   private static void testGetClass(){
       Cat cat = new Cat("Cat");
       Class<?> catClass = cat.getClass();
@@ -84,7 +84,7 @@
   - `hashCode()` should generate same value if it is called on same object,
   - Use only those instance variables to compute hash code for an object, which are also used in `equals()` method to check for equality,
 - See `hashCode()` of `Student.java`,
-  ```
+  ```java
   public class Student {
       private final int roll;
       private final String name;
@@ -116,7 +116,7 @@
   }
   ```
   Using like this. See `hashTest()` of `Test.java`,
-  ```
+  ```java
   private static void hashTest(){
   
       Student saeed = new Student(57,"Saeed",21,170);
@@ -134,7 +134,7 @@
 - All objects have a `unique identity`,
 - The `memory address` at which an object is allocated can be treated as its `identity`,
 - Ex: See `Student.java`,
-  ```
+  ```java
   public class Student {
       private final int roll;
       private final String name;
@@ -168,7 +168,7 @@
   }
   ```
   Using like this. See `equalsTest()` of `Test.java`,
-  ```
+  ```java
   private static void equalsTest(){
   
       Student saeed = new Student(57,"Saeed",21,170);
@@ -191,7 +191,7 @@
 - Used for `debugging` purpose(Advanced debugging tools are available though),
 - Has a default implementation, but not much useful,
   - Ex: See `defaultEqualsTo()` of `Test.java`,
-    ```
+    ```java
     private static void defaultEqualsTo(){
         Cat cat = new Cat("Happy 3X");
 
@@ -203,7 +203,7 @@
     ```
 - Let's `override` according to our need,
 - Ex(custom implementation): See `Student.java`,
-  ```
+  ```java
   public class Student {
       private final int roll;
       private final String name;
@@ -219,7 +219,7 @@
   }
   ```
   Using like this: See `customEqualsTo()` of `Test.java`,
-  ```
+  ```java
   private static void customEqualsTo() {
   
       Student atik = new Student(38,"Atik",22,168);

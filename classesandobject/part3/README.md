@@ -1,8 +1,7 @@
 
-# Classes and Object part-3
-> Codes are in `partThree` package
+# Classes and Object - part3
 
-# Parameter passing in java
+## Parameter passing in java
 
 ## Before passing parameter, let us clear these concepts
 - Remember, JAVA supports 2 types of data type.
@@ -19,7 +18,7 @@
 - For `primitive data type`, memory address hold `actual data`,
 - For `reference data type`, memory address hold the `reference of actual data`,
 - Ex:
-  ```
+  ```java
     Hooman sd = new Hooman("sh",22);
     Hooman sh = new Hooman("sd",23);
     sh = sd; ----(a)
@@ -44,7 +43,7 @@
   - So, `lvalue` is copied but both are pointing to same object,
   - As a result, if we make any change in the object inside method, it will take effect in passed data,
 - Ex: See `Student.java` & `Test.java`,
-  ```
+  ```java
   public class Student {
       private int roll;
       private String name;
@@ -53,7 +52,7 @@
   }
   ```
   Using like this:
-  ```
+  ```java
   public class Test {
 
       private static void printInfo(Student student){
@@ -91,13 +90,6 @@
 - See this image also
 <img src="../files/primitive_reference_passing.png" height="180px" alt="Primitive & Reference data type">
 
-    
-    
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
@@ -110,4 +102,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    
