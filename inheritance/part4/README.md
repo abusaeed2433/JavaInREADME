@@ -1,6 +1,5 @@
 
-# inheritance part-4
-> Codes are in `partFour` package
+# Inheritance - part4
 
 ## Method overloading
 - Having more than one method with the `same name` in the `same class`,
@@ -18,8 +17,8 @@
   - Compiler chooses the **most specific** method,
   - If it **doesn't** find an exact match, it will try to **look for a more generic version** by converting actual parameter into a more generic type,
 
-- Ex-1: See `Test.java`,
-    ```
+- Ex-1:
+    ```java
     private static int add(int x, int y){
         int res = (x+y);
         System.out.println("int add");
@@ -33,13 +32,13 @@
     }
     ```
     Calling like:
-    ```
+    ```java
     System.out.println( add(5,10) ); // 15
     System.out.println( add(5.0,10) ); // 15.8
     ```
 
-- Ex-2: See `MyMath.java`,
-    ```
+- Ex-2:
+    ```java
     public class MyMath {
         public double sub(int a, double b) { return a - b; }
   
@@ -47,7 +46,7 @@
     }
     ```
     Calling like:
-    ```
+    ```java
     MyMath myMath = new MyMath();
     myMath.sub(5.0,2); // fine
     myMath.sub(5,2.0); // fine
@@ -63,15 +62,15 @@
 - To initialize the instance variables of `Parent` classes, the constructors of `Parent` class must be called,
 - `super` keyword is used for calling parent class constructor,
 - Constructor of `Parent` class is called first then `Child` class,
-- Ex: See `Parent.java`, `Child.java` and `testConstructorSequence()` in `Test.java`,
-  ```
+- Ex:
+  ```java
   public class Parent {
       public Parent() {
           System.out.println("parent constructor");
       }
   }
   ```
-  ```
+  ```java
   public class Child extends Parent{
       public Child() {
           // super(); // is automatically inserted
@@ -80,7 +79,7 @@
   }
   ```
   Calling like this:
-  ```
+  ```java
   private static void testConstructorSequence(){
       Child child = new Child();
       /*
@@ -96,8 +95,8 @@
   - Is automatically added by compiler,
   - Must be the first statement of a constructor,
 - If constructor of `Parent` class takes some parameter then simply pass those inside `super(here)`,
-- Ex: See `Vehicle.java`, `Car.java` and `testConstructorParameter()` in `Test.java`,
-  ```
+- Ex:
+  ```java
   public class Vehicle {
       String brand;
       public Vehicle(String brand) {
@@ -106,7 +105,7 @@
       ...
   }
   ```
-  ```
+  ```java
   public class Car extends Vehicle{
       int noOfDoors;
       public Car(String brand, int noOfDoors) {
@@ -117,7 +116,7 @@
   }
   ```
   Using like this:
-  ```
+  ```java
   private static void testConstructorParameter(){
       Car myCar = new Car("Toyota", 4);
   
@@ -126,7 +125,6 @@
   }
   ```
 
-
 ## Method hiding
 - `Child` class inherits all non-private static methods of `Parent` class,
 - Redefining a static method in `Child` class hide the static method in `Parent` class,
@@ -134,22 +132,22 @@
 - Recall that redefining a non-static method in a class is called `method overriding`, not `method-hidiing`,
 - Redefining rules are same as method overriding rules,
 - Remember, early binding is used for static methods,
-- Ex: See `SuperClass.java`, `SubClass.java` & `testHidingBasic()` in `Test.java`,
-  ```
+- Ex:
+  ```java
   public class SuperClass {
       public static void print() {
           System.out.println("Super.print()");
       }
   }
   ```
-  ```
+  ```java
   public class SubClass extends SuperClass{
       public static void print() {
           System.out.println("Sub.print()");
       }
   }
   ```
-  ```
+  ```java
   private static void testHidingBasic(){
   
       SuperClass spr = new SuperClass();
@@ -190,8 +188,8 @@
 - The `type of the field` and its `access level` doesn't matter,
 - Remember, `early-binding` is used for field access,
 - Use `super` keyword to access the hidden fields of the `superclass`,
-- Ex: See `Mother.java`, `Daughter.java` & `testFieldHiding()` in `Test.java`,
-  ```
+- Ex:
+  ```java
   public class Mother {
       private static final String PREFIX = "MRS";
       protected String name;
@@ -206,7 +204,7 @@
       ...
   }
   ```
-  ```
+  ```java
   public class Daughter extends Mother{
       private static final String PREFIX = "MISS";
       private String name;
@@ -227,7 +225,7 @@
   }
   ```
   Using like this:
-  ```
+  ```java
   private static void testFieldHiding(){
    
       Mother mother = new Mother("Rumi");
@@ -239,12 +237,6 @@
   
   }
   ```
-
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">

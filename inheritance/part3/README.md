@@ -1,12 +1,10 @@
 
-# inheritance part-3
-
-> Codes are in `partThree` package
+# Inheritance - part3
 
 ## Method Overriding
 - Redefining a method in child class,
-- Ex: See `Parent.java`, `Child.java` & `basicOverriding()` in `Test.java`,
-    ```
+- Ex:
+    ```java
     public class Parent {
     
         public void walk(){ // overridden method
@@ -14,8 +12,6 @@
         }
     
     }
-    ```
-    ```
     public class Child extends Parent{
     
         @Override // optional annotation
@@ -26,7 +22,7 @@
     }
     ```
     Using like this:
-    ```
+    ```java
     private static void basicOverriding(){
         Child child = new Child();
         child.walk(); // Child walking...
@@ -42,9 +38,9 @@
 ## Overriding rules
 ### Rule-1:
 - Method must have to be an `instance` method,
-- Overriding doesn't apply to static methods,
+- Overriding doesn't apply to static methods.
 ### Rule-2:
-- The `overriding-method` must have the same name as the `overridden-method`,
+- The `overriding-method` must have the same name as the `overridden-method`.
 ### Rule-3:
 - The `overriding-method` must have the same number of parameters 
   - of the same type,
@@ -58,7 +54,7 @@
   - `return-type` of the `overriding-method` must be assignment compatible to the `return-type` of the `overridden-method`, i.e.,
   - `Child-type` should be assignment compatible to `Parent-type`,
 - Ex:
-  ```
+  ```java
   public class Parent {
       ...
       int getOne(){ return 1; }
@@ -66,7 +62,7 @@
       ...
   }
   ```
-  ```
+  ```java
   public class Child extends Parent{
       ...
       @Override
@@ -77,7 +73,7 @@
   }
   ```
   Using like this: See `overridingRule4()` in `Test.java`,
-  ```
+  ```java
   private static void overridingRule4(){
       Parent parent = new Parent();
       System.out.println(parent.getOne()); // 1
@@ -99,16 +95,16 @@
 - It may remove one or all exceptions, `(b)`
 - It may replace an exception with another exception, But exception must be child of `overridden-method` exception, `(c)`
 - Ex: See `CheckedException1.java`, `CheckedException2.java`, `CheckedException11.java`, `Father.java`, `Son.java`, 
-  ```
+  ```java
   public class CheckedException1 extends Exception{ }
   ```
-  ```
+  ```java
   public class CheckedException2 extends Exception{ }
   ```
-  ```
+  ```java
   public class CheckedException11 extends CheckedException1{ }
   ```
-  ```
+  ```java
   public class Father {
       public void calc(int x) throws CheckedException1, IOException {
           System.out.println("Father");
@@ -117,7 +113,7 @@
       }
   }
   ```
-  ```
+  ```java
   public class Son extends Father{
   
   //    @Override
@@ -145,7 +141,7 @@
   ```
 
 ## Overriding summary
-- CF things 
+- Remember
   - Name of the method: `same`,
   - Number of parameters: `same`,
   - Type of parameters: `same`,
@@ -158,24 +154,17 @@
 - Golden rule about method overriding: 
   - `Whatever code is written using the superclass type must also work with the subclass type`,
 
-
 ## Accessing overridden method
 - A subclass can use the keyword `super` to call the `overridden-method` of the superclass,
 - Ex: See `Son.java`,
-  ```
+  ```java
   @Override
   public void calc(int x) throws CheckedException1, IOException {
       super.calc(x); // calling calc(int) of Father class
   }
   ```
 
-
 >> Basic overriding knowledge is enough in almost most of the cases
-
-    
-    
-    
-
 
 
 <!-- bottom_nav_bar_1243 -->
@@ -189,4 +178,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    
