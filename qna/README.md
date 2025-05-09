@@ -1,5 +1,4 @@
 
-
 ## --- Java Stack Memory vs Heap Memory ---
 
 #### Stack Memory 
@@ -17,7 +16,7 @@ Image Source: Scalar
 <hr>
 
 ## --- Find output of this program ---
-```
+```java
 class A{
 
     public void m1(){
@@ -29,7 +28,7 @@ class A{
     }
 }
 ```
-```
+```java
 class B extends A{
 
     public void m2(){
@@ -37,8 +36,7 @@ class B extends A{
     }
 }
 ```
-```
-
+```java
 class OverridingTest{
     public static void main(String[] args) {
         A a = new B();
@@ -52,12 +50,6 @@ class OverridingTest{
 - **The error occurred because of Java's static type checking,**
 - The class of the reference variable determines which instance methods can be called on it and since `class-A` doesn't have method `m2()`, the compiler will complain,
 - But when we are adding `m2()` in `class-A`, compiler error will be gone. Now in runtime it will call `m2()` of `class-B` since variable `a` is referring to an object of `class-B` due to polymorphism rule.
-
-    
-    
-    
-
-
 
 
 <!-- bottom_nav_bar_1243 -->

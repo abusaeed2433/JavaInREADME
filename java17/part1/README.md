@@ -1,10 +1,10 @@
 
-# CF changes from java-8 to java-17
+# Main changes from java-8 to java-17
 
 ## New `var` keyword
 - A new `var` keyword was added that allows local variables to be declared in a more concise manner,
 - Ex:
-    ```
+    ```java
     var name = new String("hello");
     System.out.println(name); // hello
     
@@ -20,7 +20,7 @@
   - A `throw` statement,
   - A `code block` using opening and closing curly brackets
 - Ex:
-    ```
+    ```java
     int i = 20;
     switch (i){
         case 10 -> {
@@ -48,7 +48,7 @@
 
 ## `instanceof` pattern matching
 - Till now, we do like this
-  ```
+  ```java
   Student student = new PartTimeStudent(12,"Imran",5.5,12);
   PartTimeStudent partTimeStudent;
   if(student instanceof PartTimeStudent){
@@ -56,7 +56,7 @@
   }
   ```
 - Above can be simplified like this:
-  ```
+  ```java
   Student student = new PartTimeStudent(12,"Imran",5.5,12);
           
   if(student instanceof PartTimeStudent partTimeStudent){
@@ -69,11 +69,11 @@
 - Allows you to define a class and exactly `what classes can subclass it`,
 - Subclass of Sealed class must define their status: `final`, `sealed`, or `non-sealed`,
 - Ex(Sealed class):
-  ```
+  ```java
   public abstract sealed class Security permits Lock, Pin, Password { }
   ```
   Inheriting `sealed-class`:
-  ```
+  ```java
   final class Lock extends Security{ } // no class can inherit it
 
   non-sealed class Pin extends Security{ } // any class can inherit it
@@ -81,7 +81,7 @@
   sealed class Password extends Security permits MyPassword{ } // same as sealed
   ```
   Inhering `subclass` of `sealed-class`,
-  ```
+  ```java
   final class MyPassword extends Password{} // inherited above sealed class
   
   class MyPin extends Pin{} // Since Pin class can be inherited by any class
@@ -94,14 +94,14 @@
   - `a new line`, then 
   - your text as you write normally,
 - Ex(Earlier way):
-  ```
+  ```java
   String formattedTextEarlier = "This is first line.\n"+
           "THis is second line.\n"+
           "Continue like that";
   System.out.println(formattedTextEarlier);
   ```
   New way:
-  ```
+  ```java
   String formattedText = """
           This is first line.
           THis is second line.
@@ -109,13 +109,13 @@
   System.out.println(formattedText);
   ```
   Output:
-  ```
+  ```text
   This is first line.
   THis is second line.
   Continue like that
   ```
   Below one is `invalid` since uou can't write just after first `"""`,
-  ```
+  ```java
   String formattedText2 = """This is first line.
           THis is second line.
           Continue like that""";
@@ -124,7 +124,7 @@
 
 ## Record
 - Previous way:
-  ```
+  ```java
   public class Person {
       final String name;
       final int age;
@@ -144,11 +144,11 @@
   }
   ```
   New way:
-  ```
+  ```java
   public record PersonRecord(String name, int age) { }
   ```
   Using like this:
-  ```
+  ```java
   Person student = new Person("Saeed",2345);
   
   PersonRecord record = new PersonRecord("Saeed",2345);
@@ -156,12 +156,6 @@
   System.out.println(student.getName() + " - " + record.name()); // Saeed - Saeed
   System.out.println(student.getAge() + " - " + record.age()); // 2345 - 2345
   ```
-
-    
-    
-    
-
-
 
 
 <!-- bottom_nav_bar_1243 -->
