@@ -1,7 +1,5 @@
 package array;
 
-import java.sql.Array;
-import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 
 public class Test {
@@ -37,9 +35,9 @@ public class Test {
         int[][] table = new int[3][2];
 
         int[][] tbl = {
-                {1,2},
-                {3,4},
-                {5,6}
+            {1,2},
+            {3,4},
+            {5,6}
         };
 
         for(int i=0;i<tbl.length; i++){
@@ -51,9 +49,9 @@ public class Test {
 
         System.out.println("---");
         // better approach
-        for(int[] arr : tbl){
-            for(int ij : arr){
-                System.out.print(ij+" ");
+        for(int[] row : tbl){
+            for(int num : row){
+                System.out.print(num+" ");
             }
             System.out.println("");
         }
@@ -87,11 +85,9 @@ public class Test {
         arr.add(2000);
         arr.add(3);
 
-        Integer num1 = 1;
-        Integer num2 = 2000;
-
         for(int i=0; i<arr.size(); i++) System.out.print(arr.get(i)+" ");
         System.out.println("");
+        // 1 2000 3
 
         System.out.println(arr.size()); // 3
 
@@ -127,10 +123,6 @@ public class Test {
             names[i] = names[i].substring(0,1);
         }
         printArray(names); // P M A A
-
-        int[] rolls = new int[]{1,2,3,4,5};
-        int[] rolls2 = {1,2,3,4,5};
-
     }
 
     private static void printArray(int[] arr){

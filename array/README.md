@@ -17,26 +17,49 @@
     ```
 - Index is zero(`0`) based just like `C` or `C++`,
 - Make sure to assign values before using,
-- Ex: See `arrayTest()` of `Test.java`,
+- Ex:
     ```java
-    String[] names = new String[4];
-    printArray(names); // null null null null
-    
-    names[0] = "Pantho";
-    names[2] = "Aslam";
-    printArray(names); // Pantho null Aslam null
-    
-    names[1] = "Maruf";
-    names[3] = "Anik";
-    
-    printArray(names); // Pantho Maruf Aslam Anik 
-    for (int i=0;i<names.length; i++){
-        names[i] = names[i].substring(0,1); // ----(a)
+    private static void printArray(int[] arr){
+        for (int t : arr) {
+            System.out.print(t + " ");
+        }
+        System.out.println("");
     }
-    printArray(names); // P M A A 
+    private static <T> void printArray(T[] arr){
+        for (T t : arr) {
+            System.out.print(t + " ");
+        }
+        System.out.println("");
+    }
+    private static void arrayTest(){
+        int[] arr = new int[5];
+        for(int i=0;i<arr.length;i++) arr[i] = i+5;
+
+        Object obj = arr; // array are object. So assignment is possible
+        printArray(arr); // 5 6 7 8 9
+
+        int[] brr = (int[])obj;
+        printArray(brr); // 5 6 7 8 9
+
+        // default
+        String[] names = new String[4];
+        printArray(names); // null null null null
+
+        names[0] = "Pantho";
+        names[2] = "Aslam";
+        printArray(names); // Pantho null Aslam null
+
+        names[1] = "Maruf";
+        names[3] = "Anik";
+
+        printArray(names); // Pantho Maruf Aslam Anik
+        for (int i=0;i<names.length; i++){
+            names[i] = names[i].substring(0,1); // -------(a)
+        }
+        printArray(names); // P M A A
+    }
     ```
     - If you don't assign `Maruf` and `Anik`, then program will crash at `(a)`,
-- See `Test.java`,
 
 
 ## Initializing Array Elements
@@ -67,32 +90,31 @@
   - Methods in the `Vector` class are `synchronized`(Thread safe), 
   - Whereas methods in `ArrayList` are not `synchronized`,
   - `Vector` is slower, `ArrayList` is faster,
-- Use `ArrayList` (my suggestion),
+- Use `ArrayList`,
 - Ex:
     ```java
-    ArrayList<Integer> arr = new ArrayList<>();
-    arr.add(1);
-    arr.add(2000);
-    arr.add(3);
-    
-    Integer num1 = 1;
-    Integer num2 = 2000;
-    
-    for(int i=0; i<arr.size(); i++) System.out.print(arr.get(i)+" ");
-    System.out.println("");
-    
-    System.out.println(arr.size()); // 3
-    
-    arr.add(20);
-    arr.add(22);
-    System.out.println(arr.size()); // 5
+    private static void arrayListTest(){
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(1);
+        arr.add(2000);
+        arr.add(3);
+
+        for(int i=0; i<arr.size(); i++) System.out.print(arr.get(i)+" ");
+        System.out.println("");
+        // 1 2000 3
+
+        System.out.println(arr.size()); // 3
+
+        arr.add(20);
+        arr.add(22);
+        System.out.println(arr.size()); // 5
+    }
     ```
 
 ## Passing array as parameter
 - Can be passed to method just like other variable,
 - Alert when modifying array inside called method. Remember, array are object, so modifying inside method will also modify original array,
-- Ex: `printArray(T[] arr)` in `Test.java`,
-- Ex2:
+- Ex:
     ```java
     private static void resizeValues(int[] arr){
         for(int i=0; i<arr.length; i++) {
@@ -108,65 +130,73 @@
     }
     ```
 - Make a copy then pass to method if you are going to modify inside method,
-- Remember, `main(String[])` method takes an array as parameter,
+- Remember, `main(String[])` method takes an array as parameter.
 
 ## Multi-Dimensional Arrays
 - Just like `C` and `C++`,
-- Ex: See `multiDimenArray()` of `Test.java`,
+- Ex:
     ```java
-    int[][] table = new int[3][2];
-    
-    int[][] tbl = {
+    private static void multiDimenArray(){
+        int[][] table = new int[3][2];
+
+        int[][] tbl = {
             {1,2},
             {3,4},
             {5,6}
-    };
-    
-    for(int i=0;i<tbl.length; i++){
-        for(int j=0; j<tbl[i].length; j++){
-            System.out.print(tbl[i][j]+" ");
+        };
+
+        for(int i=0;i<tbl.length; i++){
+            for(int j=0; j<tbl[i].length; j++){
+                System.out.print(tbl[i][j]+" ");
+            }
+            System.out.println("");
         }
-        System.out.println("");
-    }
-    
-    System.out.println("---");
-    // better approach
-    for(int[] arr : tbl){
-        for(int ij : arr){
-            System.out.print(ij+" ");
+
+        System.out.println("---");
+        // better approach
+        for(int[] row : tbl){
+            for(int num : row){
+                System.out.print(num+" ");
+            }
+            System.out.println("");
         }
-        System.out.println("");
     }
-    /*
-    output
+    ```
+    Output
+    ```text
     1 2
     3 4
     5 6
-     */
+    ---
+    1 2
+    3 4 
+    5 6
     ```
+
 - All operations are like normal array. Just `don't be confused`,
 
 ## Converting an ArrayList to an Array
 - Accessing array elements is faster than ArrayList,
-- You may convert when you know size won't be changed anymore,
-- No need to convert. Use `ArrayList`(Suggestion),
-- Ex: See `Test.java`:
-  ```java
-  ArrayList<String> names = new ArrayList<>();
-  
-  names.add("John");
-  names.add("Jane");
-  names.add("Mary");
-  
-  Object[] arr = names.toArray(); // <--------- way-1
-  printArray(arr); // John Jane Mary
-  
-  String[] brr = new String[names.size()];
-  
-  names.toArray(brr); // <------------ way-2
-  printArray(brr); // John Jane Mary
-  ```
+- You may convert when you know size won't be changed anymore.
+- Ex:
+    ```java
+    private static void arrayListToArray(){
+        System.out.println("------------------------------ arrayListToArray ---------------------");
+        ArrayList<String> names = new ArrayList<>();
 
+        names.add("John");
+        names.add("Jane");
+        names.add("Mary");
+
+        Object[] arr = names.toArray(); // <--------- way-1
+        printArray(arr); // John Jane Mary
+
+        String[] brr = new String[names.size()];
+        names.toArray(brr); // <------------ way-2
+        printArray(brr); // John Jane Mary
+
+    }
+    ```
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
