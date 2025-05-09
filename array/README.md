@@ -12,13 +12,13 @@
 - Arrays are created dynamically at runtime,
 - The length of an array cannot be modified after it has been created,
 - Ex:
-    ```
+    ```java
     int[] arr = new int[5];
     ```
 - Index is zero(`0`) based just like `C` or `C++`,
 - Make sure to assign values before using,
 - Ex: See `arrayTest()` of `Test.java`,
-    ```
+    ```java
     String[] names = new String[4];
     printArray(names); // null null null null
     
@@ -46,12 +46,12 @@
   - boolean elements to `false`,
 - Reference type elements to `null`,
 - Ex:
-    ```
+    ```java
     String[] names = new String[4];
     printArray(names); // null null null null
     ```
 - Explicit initializing:
-    ```
+    ```java
     int[] rolls = new int[]{1,2,3,4,5}; // or
     int[] rolls2 = {1,2,3,4,5};
     ```
@@ -69,7 +69,7 @@
   - `Vector` is slower, `ArrayList` is faster,
 - Use `ArrayList` (my suggestion),
 - Ex:
-    ```
+    ```java
     ArrayList<Integer> arr = new ArrayList<>();
     arr.add(1);
     arr.add(2000);
@@ -93,14 +93,12 @@
 - Alert when modifying array inside called method. Remember, array are object, so modifying inside method will also modify original array,
 - Ex: `printArray(T[] arr)` in `Test.java`,
 - Ex2:
-    ```
+    ```java
     private static void resizeValues(int[] arr){
         for(int i=0; i<arr.length; i++) {
             if(arr[i] > 20) arr[i] = 20;
         }
     }
-    ```
-    ```
     private static void passArray(){
         int[] arr = {1,2,23,24,25,3};
     
@@ -115,7 +113,7 @@
 ## Multi-Dimensional Arrays
 - Just like `C` and `C++`,
 - Ex: See `multiDimenArray()` of `Test.java`,
-    ```
+    ```java
     int[][] table = new int[3][2];
     
     int[][] tbl = {
@@ -153,7 +151,7 @@
 - You may convert when you know size won't be changed anymore,
 - No need to convert. Use `ArrayList`(Suggestion),
 - Ex: See `Test.java`:
-  ```
+  ```java
   ArrayList<String> names = new ArrayList<>();
   
   names.add("John");
@@ -169,11 +167,6 @@
   printArray(brr); // John Jane Mary
   ```
 
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
@@ -186,4 +179,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    

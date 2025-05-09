@@ -1,12 +1,10 @@
 
-# Regex part-3
-
-> Codes are in `partThree` package
+# Regex - part3
 
 ## Using Named Groups
 - group can be named instead of using with number,
 - Format:
-  ```
+  ```java
   (?<groupName>pattern)
   ```
 - The group name must consist of
@@ -18,7 +16,7 @@
   - Will find phone number,
   - Find code & number from that phone number,
   - Format the number & print
-  ```
+  ```java
   private static void groupTest2(){
       String phones = "+8801792101111, +8801234567890, +8804324567890,+2101234";
   
@@ -36,7 +34,7 @@
   }
   ```
   Output:
-  ```
+  ```text
   +880 - 1792101111
   +880 - 1234567890
   +880 - 4324567890
@@ -52,7 +50,7 @@
   - Next call to match a pattern will start from the `beginning` of the input text,
   - Uses the provided `input` string,
 - Ex: See `resetTest()` in `Test.java`,
-  ```
+  ```java
   private static void resetTest(){
       String[] arr = {"+8801792101111", "+8801234567890", "+8804324567890","+2101234"};
   
@@ -73,7 +71,7 @@
   }
   ```
   Output:
-  ```
+  ```text
   +880 - 1792101111
   +880 - 1234567890
   +880 - 4324567890
@@ -85,7 +83,7 @@
 
 ## Example
 - We are given this input:
-  ```
+  ```text
   A train carrying 125 men and women was traveling at the speed of 
   100 miles per hour. The train fare was 75 dollars per student.
   ```
@@ -94,7 +92,7 @@
   - `> 100` by `more than a hundred`,
   - `< 100` by `less than a hundred`,
 - Our output will be:
-  ```
+  ```text
   A train carrying more than a hundred men and women was traveling at the speed of 
   a hundred miles per hour. The train fare was less than a hundred dollars per student.
   ```
@@ -110,7 +108,7 @@
   - `StringBuilder appendTail(StringBuilder sb)`:
     - Add rest of the part to `StringBuilder` after last saved position till end of the input,
 - Solution code: See `solution()` in `Test.java`,
-  ```
+  ```java
   private static void solution(){
   
       String input = "A train carrying 125 men and women was traveling at the speed of 100 miles per hour. "+
@@ -159,12 +157,6 @@
   ```
 
 >> Do you still remember the image while starting regex? 🐱
-
-
-    
-    
-    
-
 
 
 <!-- bottom_nav_bar_1243 -->
