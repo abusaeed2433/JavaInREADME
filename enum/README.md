@@ -1,18 +1,17 @@
 
-
 # Enum
 
 ## Introduction
 - Lets you create an ordered list of constants as a type,
 - Mainly used for declaring constant,
 - Simple structure:
-    ```
+    ```java
     <access-modifier> enum <enum-type-name> {
      // List of comma separated names of enum constants
     }
     ```
 - Ex:
-    ```
+    ```java
     public enum Gender {
         MALE, FEMALE, OTHERS ; // these are enum constant
     }
@@ -30,7 +29,7 @@
 - Name is assigned to each enum constant,
 - Order number is assigned to each enum constant called `ordinal`,
 - The `ordinal` starts with zero & it is incremented by one for enum constant,
-    ```
+    ```java
     System.out.println(Gender.MALE.name()); // MALE
     System.out.println(Gender.FEMALE.name()); // FEMALE
     System.out.println(Gender.OTHERS.name()); // OTHERS
@@ -46,7 +45,7 @@
 - You can declare pretty much everything inside an enum type body that you can declare inside a class body,
 - Can't add a public or protected constructor to an enum type. If you do so, they will be automatically converted to private during compilation,
 - Ex: See `MyWeekDay.java`:
-    ```
+    ```java
     public enum MyWeekDay {
         SATURDAY(true),SUNDAY(false),MONDAY(false),
         TUESDAY(false), WEDNESDAY(false),THURSDAY(false), FRIDAY(false);
@@ -66,7 +65,7 @@
     }
     ```
 - Example usage: See `Test.java`:
-    ```
+    ```java
     private static int countWorkingDays(List<MyWeekDay> days){
         int counter = 0;
     
@@ -80,7 +79,7 @@
     }
     ```
     Calling is like:
-    ```
+    ```java
     ArrayList<MyWeekDay> days = new ArrayList<>();
     days.add(SATURDAY);
     days.add(MONDAY);
@@ -99,8 +98,8 @@
     - For comparing two enum constants of different types,
   - `==` operator,
     - Must be of same type,
-- Ex: See `compareEnum()` of `Test.java`:
-    ```
+- Ex:
+    ```java
     Gender gender1 = Gender.MALE;
     Gender gender2 = Gender.FEMALE;
     Gender gender3 = Gender.MALE;
@@ -126,7 +125,7 @@
 ## Nested enum type
 - You can declare a nested enum type inside a class, an interface, or another enum type, 
 - Nested enum types are implicitly static,
-    ```
+    ```java
     public class Test {
         ...
         //nested enum
@@ -142,12 +141,12 @@
 - An enum type is never inherited by another enum type. So,
 - You must provide implementation for all abstract methods in that interface,
 - See `CommandList.java`, `Executable.java`:
-    ```
+    ```java
     public interface Executable {
         void execute();
     }
     ```
-    ```
+    ```java
     public enum CommandList implements Executable{
         RUN{
             @Override
@@ -169,7 +168,7 @@
         }
         public abstract void doNothing();
     }
-    ```
+    ```java
     Calling is like:
     ```
     RUN.execute(); // Running
@@ -184,7 +183,7 @@
 
 ## Reverse Lookup for Enum Constants
 - We can get enum constant by `name` of `ordinal`,
-    ```
+    ```java
     System.out.println(MyWeekDay.valueOf("SATURDAY")); // SATURDAY
     System.out.println(MyWeekDay.values()[0]); // SATURDAY
     ```
@@ -193,7 +192,7 @@
 - Can find all enum constant by performing search,
 - Abstract class `EnumSet` is used for this,
 - Ex:
-    ```
+    ```java
     EnumSet<MyWeekDay> days = EnumSet.allOf(MyWeekDay.class);
     printArray(days.toArray()); // SATURDAY SUNDAY MONDAY TUESDAY WEDNESDAY THURSDAY FRIDAY
     
@@ -204,14 +203,7 @@
     printArray(holidays.toArray()); // SATURDAY FRIDAY 
     ``` 
 
-
 >> ENUM IS MAINLY USED FOR DECLARING CONSTANT & IT SHOULD BE ENOUGH FOR YOU
-
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
@@ -224,4 +216,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    
