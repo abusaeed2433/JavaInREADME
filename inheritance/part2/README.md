@@ -1,13 +1,10 @@
 
-
-# inheritance part-2
-
-> Codes are in `partTwo` package
+# Inheritance - part2
 
 ## Binding
 - Classes have `methods` and `fields`,
-- Suppose: See `Parent.java`, `Child.java` and `basicBindingTest()` in `Test.java` 
-    ```
+- Suppose:
+    ```java
     public class Parent {
     
         public void print(){
@@ -15,8 +12,6 @@
         }
         
     }
-    ```
-    ```
     public class Child extends Parent{
     
         public void print(){
@@ -24,8 +19,6 @@
         }
     
     }
-    ```
-    ```
     private static void basicBindingTest(){
         Parent parent = new Child();
         parent.print(); <------ (a)
@@ -51,8 +44,8 @@
   - `Static` methods,
   - `Non-static-final` methods,
 - In early binding, a `method` or a `field` is accessed based on the declared type,
-- Ex: See `Parent.java`, `Child.java`, `earlyBindingTest()` in `Test.java`:
-    ```
+- Ex:
+    ```java
     public class Parent {
         private String name;
         public static int id = 0;
@@ -70,7 +63,7 @@
         }
     }
     ```
-    ```
+    ```java
     public class Child extends Parent{
         private String type;
         public static int id = 1;
@@ -84,7 +77,7 @@
         }
     }
     ```
-    ```
+    ```java
     private static void earlyBindingTest(){
         Parent parent = new Parent(); 
         parent.send(); // Parent sending...
@@ -98,7 +91,7 @@
     
     
         Child child = new Child(); 
-        child.send(); // Child sending...
+        child.send(); // Parent sending...
         child.run(); // Child running...
         System.out.println(child.id); // 1
     
@@ -110,13 +103,11 @@
   - As you can see, it doesn't matter which object the variable is referring,
   - `methods` and `fields` are always accessed based on the variable type,
 
-
 ## Late Binding
 - Used for `non-static`, `non-final` methods,
-- Ex: See `lateBindingTest()` in `Test.java`,
-    ```
+- Ex:
+    ```java
     private static void lateBindingTest(){
-    
         Parent parent = new Parent();
         Child child = new Child();
     
@@ -124,13 +115,12 @@
     
         child.print(); //(2) Child printing...
     
-        ((Parent)child).print();(3) // Child printing...
+        ((Parent)child).print(); // (3) Child printing...
     
     
         parent = child; // Upcasting
     
-        parent.print();(4) // Child printing...
-    
+        parent.print(); // (4) Child printing...
     }
     ```
 - At `(1)` & `(2)`, it is simply fine, i.e., calling method on object to which variable is referring,
@@ -147,11 +137,6 @@
 
 >> It's not hard, just try by yourself
     
-    
-    
-
-
-
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
 <a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/inheritance/part1/">
@@ -163,4 +148,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    

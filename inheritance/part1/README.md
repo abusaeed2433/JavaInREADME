@@ -1,9 +1,5 @@
 
-
-# inheritance part-1
-
-> Codes are in `partOne` package
-
+# Inheritance - part1
 
 ## Introduction
 - Important concept of OOP,
@@ -24,19 +20,20 @@
 - `extends Object` is implicitly added for `first` `Parent` class,
 - Any class can access code of `Object` class without extending it since it is implicitly extended to `Object` class,
 - Ex:
-    ```
+    ```java 
     class A{ } // A extends Object class implicitly
     class B extends Object{} // explicitly
-    ```
-  Using like this: See `testForefatherObject()` in `Common.java`
-    ```
-    private static void testForefatherObject(){
-        A a = new A();
-        B b = new B();
-    
-        // hashCode() is defined in Object class
-        System.out.println(a.hashCode()); // executed successfully
-        System.out.println(b.hashCode()); // executed successfully
+
+    public class Common {
+        /* ... */
+        private static void testForefatherObject(){
+            A a = new A();
+            B b = new B();
+
+            // hashCode() is defined in Object class. But we can use it here
+            System.out.println(a.hashCode()); // 733672688
+            System.out.println(b.hashCode()); // 297927961
+        }
     }
     ```
 
@@ -71,7 +68,7 @@
 - `subclass` can always be cast into `superclass`(`upcasting`),
 - `super-class` can be cast into `subclass` iff the variable of `superclass` refers object of the `subclass`(`downcasting`),
 - Ex:
-    ```
+    ```java
     private static void testUpDownCasting(){
         Employee abulKalam = new Employee(1, "Abul Kalam", 50000);
     
@@ -101,8 +98,6 @@
     - Failed at runtime check,
     - See above image
 
-
-
 ## The `instanceof` Operator
 - Can be used for making sure that `downcast` will succeed,
 - An object is considered an instance of a class if 
@@ -111,8 +106,8 @@
 - You can use the `instanceof` operator to check if an object is an instance of a class or not,
 - It performs both `compile-time` and `runtime` check,
 - See <a href="https://github.com/abusaeed2433/JavaBasic/blob/66e6efc7f943f2414b38900a9303db3a12894e9b/src/q_Interfaces/info5.md#the-instanceof-operator">instanceof at interface</a> for more,
-- Ex: See `instanceofTest()` in `Test.java`,
-  ```
+- Ex:
+  ```java
   static private void instanceOfTest(){
       Employee abulKalam = new Employee(1, "Abul Kalam", 50000);
       Employee employee = new Manager(2,"Employee",20034,10000);
@@ -134,12 +129,6 @@
       }
   }
   ```
-
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
