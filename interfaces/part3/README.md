@@ -1,47 +1,63 @@
 
-
-# interface part-3
-
-> CODES ARE IN `partThree` PACKAGE
+# Interface - part3
 
 ## Interface Defines a New Type
 - An `interface` defines a new reference type,
 - You can use an `interface` type anywhere you can use a reference type,
 - All rules for a reference type variable apply to a variable of an `interface` type,
 - Let us see through an example:
-- See `Swimmable.java`, `Swimmer.java` & `Test.java`
-    ```
-    public interface Swimmable {
-        double DEFAULT_SPEED = 20;
-        void swim();
-    }
-    ```
-  ```
-  public class Swimmer implements Swimmable{
-      ...
-      private Swimmable swimmable; // global variable
-  
-      ...
-  
-      public Swimmable getSwimmable() {
-          if(swimmable == null){
-              swimmable = this; // referring to this instance
-          }
-          return swimmable;
-      }
-  
-      public Swimmable getSwimmable() {
-          Swimmable swimmable = this; // local variable
-          if(this.swimmable == null){
-              this.swimmable = swimmable;
-          }
-          return swimmable;
-      }
-      ...
+- Ex:
+  ```java
+  public interface Swimmable {
+      double DEFAULT_SPEED = 20;
+      void swim();
   }
   ```
-  Calling like this:
+  ```java  
+    public class Swimmer implements Swimmable{
+
+        private String name;
+        private final int id;
+        private Swimmable swimmable; // global variable
+
+        public Swimmer(String name, int id) {
+            this.name = name;
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public Swimmable getSwimmable() {
+            Swimmable swimmable = this; // local variable
+            if(this.swimmable == null){
+                this.swimmable = swimmable;
+            }
+            return swimmable;
+        }
+
+        public void setSwimmable(Swimmable swimmable) { // parameter
+            this.swimmable = swimmable;
+        }
+
+        @Override
+        public void swim() {
+            System.out.println("Swimming...");
+        }
+
+    }
   ```
+  Calling like this:
+  ```java
   private static void testReferenceType(){
       Swimmer swimmer = new Swimmer("John",1);
       swimmer.swim(); // calling function
@@ -52,8 +68,8 @@
   - Can be `null`,
   - Can access constant field,
   - Instant & static variable are initialized to `null` by default,
-  - Ex: See `Test.java`,
-    ```
+  - Ex:
+    ```java
     private static void testOperationOnVariable(){
         Swimmable swimmable = null; // can be null
         System.out.println(swimmable);
@@ -74,17 +90,17 @@
 - When a class implements an `interface` is known as `implementing-class`,
 - `implementing-class` must provide implementations for all `abstract` methods of the interface if the class is not `abstract` itself,
 - `implementing-class` can also override `default` method of an `interface`,
-- Ex: See `Swimmable.java` & `Swimmer.java`:
-  ```
-  public interface Swimmable {
-      ...
-      void swim();
-  }
+- Ex:
+  ```java
+    public interface Swimmable {
+        double DEFAULT_SPEED = 20;
+        void swim();
+    }
   ```
   implementing class definition is like
-  ```
+  ```java
   public class Swimmer implements Swimmable{
-      ...
+      /*...*/
       @Override
       public void swim() { // must have to provide implementation
           System.out.println("Swimming...");
@@ -92,10 +108,11 @@
   
   }
   ```
+
 - As discussed earlier, variable of `interface` can hold object of `implementing-class` &
 - Assignment rules are similar to object assignment rules,
 - Ex:
-  ```
+  ```java
   private static void variableTest(){
       Swimmable tuna = new Swimmer("Tuna",22);
       Swimmable dolphin = new Swimmer("Dolphin",23);
@@ -120,15 +137,15 @@
 - Methods in an `interface` are implicitly public,
 - Implementing `throws` clause is optional in `implementing-class`. But,
 - You can't throw any exception that are not listed in interface,
-- Ex: `MyCheckedException.java`, `Pressable.java` & `MyView.java`,
-  ```
+- Ex:
+  ```java
   public class MyCheckedException extends Exception{  
       public MyCheckedException() {
           // does nothing
       }
   }
   ```
-  ```
+  ```java
   public interface Pressable {
       int LONG_PRESS_DURATION = 200; // ms
   
@@ -136,7 +153,7 @@
       void onClicked();
   }
   ```
-  ```
+  ```java
   public class MyView implements Pressable{
   //    @Override
   //    public void onPressed() {} // ok. dropping exception
@@ -165,24 +182,23 @@
 - Ignore all of these. Override method as it is defined in `interface`,
 
 
-
 ## Implementing Multiple Interfaces
 - A class can implement multiple `interfaces`,
 - Must have to override all `abstract` methods of all `interfaces`,
-- Ex: See `Clickable.java`, `Pressable.java` & `MyCustom.java`,
-  ```
+- Ex:
+  ```java
   public interface Clickable {
       default void onClicked(){...}
   }
   ```
-  ```
+  ```java
   public interface Pressable {
       ...
       void onPressed() throws IOException;
       void onClicked();
   }
   ```
-  ```
+  ```java
   public class MyCustom implements Clickable,Pressable{
       
       @Override
@@ -203,7 +219,6 @@
 - There is no problem if interfaces contain common method. Because we are providing our own implementation by overriding that method in `implementing-class`,
 - There is no such problem like `Diamond-problem` in implementing multiple interfaces,
 
-
 ## Partially Implementing an Interface
 - A class can partially implement an `interface` iff it is declared as `abstract`,
 - Remember, `abstract-class` can have abstract method,
@@ -212,27 +227,35 @@
 - Simple concept. Don't be confused,
 - Ex: see by yourself,
 
-
 ## The Supertype-Subtype Relationship
 - Implementing an `interface` to a class establishes a supertype-subtype relationship,
 - The class becomes a subtype of all the interfaces it implements,
 - All interfaces become a supertype of the class,
 - A subtype can be used wherever supertype can be used(`Substitution rule`),
 - Ex: See `MyCustom.java`,
-  ```
-  public class MyCustom implements Clickable,Pressable{
-     ...
-  }
+  ```java
+    public class MyCustom implements Clickable,Pressable{
+
+        @Override
+        public void onPressed() throws IOException {
+
+        }
+
+        @Override
+        public void onClicked() {
+            Clickable.super.onClicked();
+        }
+    }
   ```
   - Here `MyCustom` class is like subtype, and `Clickable`, `Pressable` are like supertype,
   
-- Ex: See `Test.java`,
-  ```
+- Ex:
+  ```java
   private static void requestClick(Clickable clickable){
       clickable.onClicked();
   }
   ```
-  ```
+  ```java
   private static void subSuperTest(){
       Clickable clickable = new MyCustom();
       requestClick(clickable); // Clicked in clickable

@@ -1,7 +1,5 @@
 
-# interface part-4
-
-> CODES ARE IN `partFour` PACKAGE
+# Interface - part4
 
 ## Interface inheritance
 - Can inherit another one or multiple interfaces,
@@ -14,7 +12,7 @@
 
 ## Some interfaces used in below examples
 - `Singer` interface
-  ```
+  ```java
   interface Singer {
       void sing();
       void setRate(double rate);
@@ -22,7 +20,7 @@
   }
   ```
 - `Writter` interface, 
-  ```
+  ```java
   interface Writer {
       void write();
       void setRate(double rate);
@@ -30,7 +28,7 @@
   }
   ```
 - `Player` interface,  
-  ```
+  ```java
   interface Player {
       void play();
       void setRate(double rate);
@@ -44,7 +42,7 @@
 - See `TestInheritenceOne.java`,
 
   Overriding is completely optional in `CharitySinger` since this is an interface,
-  ```
+  ```java
   interface CharitySinger extends Singer {
       @Override
       default void setRate(double rate) { // do nothing }
@@ -56,7 +54,7 @@
   }
   ```
   Overriding is must here since `MySinger` is a class,
-  ```
+  ```java
   static class MySinger implements CharitySinger {
       @Override
       public void sing() {
@@ -65,7 +63,7 @@
   }
   ```
   Using like this:
-  ```
+  ```java
   public static void main(String[] args) {
       CharitySinger singer = new MySinger();
       singer.setRate(345);
@@ -76,7 +74,7 @@
 
 ## Example-2
 - It is possible that the same student is a `Singer` as well as a `Writer`,
-  ```
+  ```java
   interface SingerWriter extends Singer, Writer {
       // No code
   }
@@ -87,7 +85,7 @@
   - Inherits methods `setRate()` and `getRate()` twice. One from `Writter` and one from `Writter`,
   - This doesn't even cause any problem as both methods are abstract,
 - Example usage:
-  ```
+  ```java
   public class MyWriterSinger implements TestInheritanceOne.SingerWriter {
   
       private double rate;
@@ -114,7 +112,7 @@
   }
   ```
 - Calling like below:
-  ```
+  ```java
   SingerWriter singerWriter = new MyWriterSinger();
   singerWriter.sing();  // Singing...
   singerWriter.write(); // Writing...
@@ -124,9 +122,8 @@
 
 ## Example-3
 - It is possible that the same student is a `Singer` as well as a `Player`,
-  ```
-  interface SingerPlayer extends Singer, Player{
-          
+  ```java
+  interface SingerPlayer extends Singer, Player{ 
   }
   ```
   - Above code generates this compile-time-error: `Player and Singer are incompatible; interface SingerPlayer inherits abstract and default for getRate() from types Player and Singer`,
@@ -136,7 +133,7 @@
 - This error will also occur if any or both of the method is `default`,
 - This error can be solved by overriding the method in `sub-interface`,
 - So, new implementation of `SinglePlayer` become: See `TestInheritenceOne.java`,
-  ```
+  ```java
   interface SingerPlayer extends Singer, Player{
   
       //double getRate(); // ok
@@ -164,7 +161,7 @@ When a class inherits a method with the same signature from multiple path(`class
   - Method of interfaces will be ignored,
   - Remember, multiple inheritance using class is not possible. So there can have maximum one parent-class,
   - Ex: See `MultipleClick.java`, `Clickable.java` & `Test.java`,
-    ```
+    ```java
     public interface Clickable {
   
         default void onClicked(){
@@ -172,7 +169,7 @@ When a class inherits a method with the same signature from multiple path(`class
         }
     }
     ```
-    ```
+    ```java
     class ClickDetector{
         public void onClicked(){ // should be public
             System.out.println("Calling from click detector");
@@ -184,7 +181,7 @@ When a class inherits a method with the same signature from multiple path(`class
     }
     ```
     Calling like this:
-    ```
+    ```java
     private static void conflictTest1(){
         MultipleClick mc = new MultipleClick();
         mc.onClicked(); //Calling from click detector
@@ -205,15 +202,15 @@ When a class inherits a method with the same signature from multiple path(`class
   - Remove all methods from the list that have been overridden by others in the list,
   - If you are left with only one choice, that is the method the class will inherit,
   - In short, child class will get precedence,
-  - Ex: See `Clickable.java`, `EventListener.java` & `Test.java`,
-    ```
+  - Ex:
+    ```java
     public interface Clickable {
       default void onClicked(){
           System.out.println("Clicked in clickable");
       }
     }
     ```
-    ```
+    ```java
     public interface EventListener extends Clickable{
       @Override
       default void onClicked() {
@@ -222,7 +219,7 @@ When a class inherits a method with the same signature from multiple path(`class
     }
     ```
     Calling like this:
-    ```
+    ```java
     private static void conflictTest2(){
         new MyEvent().onClicked(); // click from event listener
     }
@@ -232,7 +229,7 @@ When a class inherits a method with the same signature from multiple path(`class
   - Nothing important here,
   - Just override the method that has same signature and coming from two different interface,
   - Ex: See `MyEvent2.java`,
-    ```
+    ```java
     public class MyEvent2 implements Clickable,Pressable{
     
       @Override

@@ -1,26 +1,24 @@
 
-# interface part-6
-
-> CODES ARE IN `partSix` PACKAGE
+# Interface - part6
 
 ## Polymorphism - One Object, Many Views
 - It is an ability of an object to provide its different views,
 - Interfaces let you create a polymorphic object,
-- Ex: See `Walkable.java`, `Swimmable.java`, `Turtle.java`, & `Test.java`,
-    ```
+- Ex:
+    ```java
     public interface Walkable {
         void walk();
     }
     ```
-    ```
+    ```java
     public interface Swimmable {
         void swim();
     }
     ```
-    ```
+    ```java
     public class Turtle implements Walkable,Swimmable{
         private String name;
-        ...
+        /*...*/
   
         public void bite(){
             System.out.println(name+" is biting...");
@@ -35,7 +33,7 @@
         }
     }
     ```
-    ```
+    ```java
     private static void testPolymorphic(){
         Turtle turti = new Turtle("Turti");
     
@@ -59,14 +57,14 @@
   - `2` from implementing two interfaces,
 - It may be useful if we want to give access to some particular method of a class,
 - One simple example: See `Test.java`,
-  ```
+  ```java
   private static void startWalking(Walkable walkable){
       walkable.walk(); // Can't access other method
       ...
   }
   ```
   Calling like this
-  ```
+  ```java
   Turtle turti = new Turtle("Turti");
   startWalking(turti); // Turti is walking...
   ```
@@ -74,7 +72,7 @@
 ## Dynamic Binding and Interfaces
 - Java uses `dynamic-binding`when a method is invoked using a variable of an interface type,
 - See this example:
-  ```
+  ```java
   Walkable oogway = new Turtle("Oogway");
   oogway.walk();
   ```

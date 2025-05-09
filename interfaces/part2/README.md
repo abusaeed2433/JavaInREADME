@@ -1,7 +1,5 @@
 
-# interface part-2
-
-> CODES ARE IN `partTwo` PACKAGE
+# Interface - part2
 
 > Try to understand basic structure with `field` and `Abstract methods`. You can ignore from 3-lines separator
 
@@ -12,18 +10,18 @@
   - An annotation type,
 - Generally interface means top-level interface,
 - Structure:
-    ```
+    ```java
     <modifiers> interface <interface-name> {
-     Constant-Declaration
-     Method-Declaration
-     Nested-Type-Declaration
+        Constant-Declaration
+        Method-Declaration
+        Nested-Type-Declaration
     }
     ```
 - modifiers are same as class modifier,
 - interface-name is a valid java identifier,
 - An interface declaration is always abstract whether you declare it abstract explicitly or not,
 - Ex: See `Clickable.java`
-    ```
+    ```java
     public interface Clickable {
        // body of interface. Discussed later    
     }
@@ -35,8 +33,7 @@
   - Abstract, static, and default methods,
   - Static types (nested interfaces and classes)
 - All members of an interface are implicitly public,
-- An interface cannot have `mutable`(changeable) instance and class variables. Because we can't create object of an interface,
-
+- An interface cannot have `mutable`(changeable) instance and class variables. Because we can't create object of an interface.
 
 ## Constant Fields Declarations
 - All fields in an interface are implicitly `public`, `static` and `final`,
@@ -44,23 +41,22 @@
 - Constant field can be accessed using dot(`.`),
 - Since fields are `final`, so you must have to initialize it while declaring,
 - It is a convention to use uppercase letters in the field name,
-- Ex: See `Clickable.java`
-    ```
+- Ex:
+    ```java
     public interface Clickable {
         int SINGLE_CLICK = 1;
         int DOUBLE_CLICK = 2;
         int DOUBLE_CLICK_INTERVAL = 500; // ms
     }
     ```
-- Can be used like this: See `Test.java`
-  ```
+- Can be used like this:
+  ```java
   private static void testConstantField(){
       System.out.println(Clickable.SINGLE_CLICK); // 1
   
       System.out.println(Clickable.DOUBLE_CLICK_INTERVAL); // 500
   
       //Clickable.DOUBLE_CLICK = 10; // error since implicitly final
-          
   }
   ```
 
@@ -71,11 +67,11 @@
     - Doesn't have body,
     - May include parameters, a return type, and a `throws` clause,
     - Can't be `final` since final method can't be overridden,
-    - Ex: See `Clickable.java`,
-       ```
+    - Ex:
+       ```java
        public interface Clickable {
-           ...
-           //public abstract void onClick(); // same as below one
+           /*...*/
+           // public abstract void onViewSingleClick(); // same as below one
            void onViewSingleClick();
            void onViewDoubleClick() throws RuntimeException;
        }
@@ -87,10 +83,10 @@
     - They are implicitly public,
     - Must be called on interface name,
     - Can't be called on variable,
-    - Ex: See `Clickable.java` & `Test.java`
-      ```
+    - Ex:
+      ```java
       public interface Clickable {
-         ...
+         /*...*/
          static void printConstant(){
              System.out.println("SINGLE_CLICK: "+SINGLE_CLICK);
              System.out.println("DOUBLE_CLICK: "+DOUBLE_CLICK);
@@ -99,8 +95,8 @@
 
       }
       ```
-      Must be called like this: See `Clickable.java`, `Test.java` and `MyItem.java`,
-      ```
+      Must be called like this:
+      ```java
       private static void staticMethodTest(){
          Clickable.printConstant();
         
@@ -120,17 +116,30 @@
       - Since `default` method is optional to override. So,
       - You can add any number of `default` method without modifying existing code,
     - Have access to the keyword `this` in the same way as class,
-    - Ex: See `Clickable.java`, `MyItem.java ` & `Test.java`,
-      ```
-      public interface Clickable {
-         ...
-         default void requestSingleClick(){
-             this.onViewSingleClick();
-         }
-      }
+    - Ex:
+      ```java
+        public interface Clickable {
+            int SINGLE_CLICK = 1;
+            int DOUBLE_CLICK = 2;
+            int DOUBLE_CLICK_INTERVAL = 500; // ms
+
+            //public abstract void onClick();
+            void onViewSingleClick();
+            void onViewDoubleClick() throws RuntimeException;
+
+            static void printConstant(){
+                System.out.println("SINGLE_CLICK: "+SINGLE_CLICK);
+                System.out.println("DOUBLE_CLICK: "+DOUBLE_CLICK);
+                System.out.println("DOUBLE_CLICK_INTERVAL: "+DOUBLE_CLICK_INTERVAL);
+            }
+
+            default void requestSingleClick(){
+                this.onViewSingleClick(); //
+            }
+        }
       ```
       
-      ```
+      ```java
       public class MyItem implements Clickable{
          @Override
          public void onViewSingleClick() {
@@ -144,7 +153,7 @@
       }
       ```
       Accessing like this:
-      ```
+      ```java
       private static void defaultMethodTest(){
          Clickable myItem = new MyItem();
          myItem.requestSingleClick(); // Single click
@@ -163,7 +172,7 @@
 - You can also declare class inside interface. But it's not common. Though it can be used for organizing related entities,
 - Nested type increases code readability and helps to organize code,
 - Nested interface example: See `ATM.java` and `MyAccount.java`(implementing multiple interface is discussed later),
-  ```
+  ```java
   public interface ATM {
       
       boolean login(int account);
@@ -180,7 +189,7 @@
   }
   ```
 - Nested class example: See `Job.java` and `Test.java`,
-  ```
+  ```java
   public interface Job {
   
       class EmptyJob implements Job {
@@ -197,9 +206,8 @@
   }
   ```
   Calling like this:
-  ```
+  ```java
   private static void nestedClassTest(){
-      ...
       Job.EMPTY_JOB.runJob();
   }
   ```

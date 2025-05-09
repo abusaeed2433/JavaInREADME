@@ -1,7 +1,5 @@
 
-# interface part-7
-
-> CODES ARE IN `partSeven` PACKAGE
+# Interface - part7
 
 ## A Real-World example using interface
 - Similar to real world problem,
@@ -21,79 +19,121 @@
     - One for getting counter value,
     - One for getting any error/message,
 
-- `CounterListener` interface: See `CounterListener.java`,
-  ```
+- `CounterListener` interface:
+  ```java
   public interface CounterListener {
       void onTimeChanged(int currentTime);
       void onMessageFound(String message);
   }
   ```
 
-- `Counter` class: See `Counter.java`,
-  ```
-  public class Counter {
-      ...
-      private final CounterListener listener;
+- `Counter` class:
+    ```java
+    public class Counter {
+
+        private final int delayBetween;
+
+        private int maxCountValue;
+        private int currentValue = 1;
+        private boolean isRunning, isInPauseState;
+
+        private ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+        private final CounterListener listener;
+
+        public Counter(int delayBetween,CounterListener listener) {
+            this.delayBetween = delayBetween;
+            this.listener = listener;
+        }
+
+        public void startCounter(int maxCountValue){
+            if(isInPauseState){
+                listener.onMessageFound("Counter is in pause state");
+                return;
+            }
+            if(isRunning) {
+                listener.onMessageFound("Counter already running");
+                return;
+            }
+
+            currentValue = 0;
+            this.maxCountValue = maxCountValue;
+            startRunning();
+            isRunning = true;
+        }
+
+        public void stopCounter(){
+            if(!isRunning) {
+                listener.onMessageFound("Counter not running");
+                return;
+            }
+
+            isRunning = false;
+            isInPauseState = false;
+
+            shutdownNow();
+
+            currentValue = 0;
+            listener.onMessageFound("Counter stopped");
+        }
+
+        private void shutdownNow(){
+            executor.shutdownNow();
+            executor = Executors.newSingleThreadScheduledExecutor();
+        }
+
+        public void pause(){
+            if(!isRunning){
+                listener.onMessageFound("Counter not running");
+                return;
+            }
+
+            if(isInPauseState){
+                listener.onMessageFound("Already in pause");
+                return;
+            }
+
+            listener.onMessageFound("Counter paused");
+            isInPauseState = true;
+            shutdownNow();
+        }
+
+        public void resume(){
+            if(!isRunning){
+                listener.onMessageFound("Counter not started");
+                return;
+            }
+
+            if(!isInPauseState){
+                listener.onMessageFound("Counter is running...");
+                return;
+            }
+
+            isInPauseState = false;
+            startRunning();
+        }
+
+        private void startRunning(){
+            if(currentValue >= maxCountValue) return;
+
+            isRunning = true;
+            executor.scheduleAtFixedRate(new Runnable() {
+                @Override
+                public void run() {
+                    currentValue++;
+                    listener.onTimeChanged(currentValue);
+                    if(currentValue >= maxCountValue) {
+                        listener.onMessageFound("Counting completed");
+                        isRunning = false;
+                        shutdownNow();
+                    }
+                }
+            },0, delayBetween,TimeUnit.MILLISECONDS);
+        }
+    }
+    ```
   
-      public Counter(int delayBetween,CounterListener listener) {
-          ...
-          this.listener = listener;
-      }
-  
-      public void startCounter(int maxCountValue){
-          ...
-              listener.onMessageFound("Counter is in pause state");
-          ...
-              listener.onMessageFound("Counter already running");
-          ...
-      }
-  
-      public void stopCounter(){
-          ...
-              listener.onMessageFound("Counter not running");
-          ...
-          listener.onMessageFound("Counter stopped");
-      }
-  
-      ...
-  
-      public void pause(){
-          ...
-              listener.onMessageFound("Counter not running");
-          ...
-              listener.onMessageFound("Already in pause");
-          ...
-          listener.onMessageFound("Counter paused");
-          ...
-      }
-  
-      public void resume(){
-          ...
-              listener.onMessageFound("Counter not started");
-          ...
-              listener.onMessageFound("Counter is running...");
-          ...
-      }
-  
-      private void startRunning(){
-          ...
-          executor.scheduleAtFixedRate(new Runnable() {
-              @Override
-              public void run() {
-                  ...
-                  listener.onTimeChanged(currentValue);
-                  ...
-                      listener.onMessageFound("Counting completed");
-                      ...
-                  ...
-              }
-          },0, delayBetween,TimeUnit.MILLISECONDS);
-      }
-  }
-  ```
-  
-- `MyApp` class: See `MyApp.java`:
-  ```
+- `MyApp` class:
+  ```java
   public class MyApp {
   
       public static void main(String[] args) {

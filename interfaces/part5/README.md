@@ -1,17 +1,14 @@
 
-
-# interface part-5
-
-> CODES ARE IN `partFive` PACKAGE
+# Interface - part5
 
 ## The `instanceof` Operator
 - To evaluate if a reference type variable refers to an object of a specific class or class implements a specific interface,
 - Structure:
-    ```
+    ```java
     <<referenceVariable>> instanceof <<referenceType>>
     ```
-- Ex: See `instanceOfTest` in `Test.java`,
-  ```
+- Ex:
+  ```java
   Giver giver = new Giver();
   if(giver instanceof Object){
       System.out.println("giver is an object"); // executed
@@ -35,25 +32,25 @@
   <img src="../files/instanceof_operator.jpg" height="200px">
 - For above structure:
   - Ex-1:
-    ```
+    ```java
     Munificent john = new MunificentGiver();
     System.out.println(john instanceof Munificent); // true
     ```
     - Because `MunificentGiver` implements `Munificent` interface,
   - Ex-2:
-    ```
+    ```java
     Giver giver = new Giver();
     System.out.println (giver instanceof Munificent); // false
     ```
     - Because `Giver` class doesn't implement `Munificent` interface,
   - Ex-3:
-    ```
+    ```java
     Giver kim = new StingyGiver();
     System.out.println(kim instanceof Munificent); // false
     ```
     - Because `StingyGiver` & `Giver`(parent of `StingyGiver`) class doesn't implement `Munificent` interface,
   - Ex-4:
-    ```
+    ```java
     StingyGiver jim = new StingyGiver();
     //System.out.println(jim instanceof Munificent);
     ```
@@ -75,8 +72,8 @@
 - Why do we need it?
   - Used to mark a class with a special meaning that can be used in a particular context,
   - Class can be organized based on some category,
-- Ex: See `MarkerTest.java`,
-  ```
+- Ex:
+  ```java
   interface Funny { // marker interface
   }
   
@@ -95,7 +92,7 @@
       public Mouse(String name) { this.name = name; }
   }
   ```
-  ```
+  ```java
   private static void countFunny(ArrayList<Object> list){
       int count = 0;
       for (Object fun : list){
@@ -105,7 +102,7 @@
   }
   ```
   Can be used like this:
-  ```
+  ```java
   Human john = new Human("John");
   Cat tom = new Cat("Tom");
   Mouse jerry = new Mouse("Jerry");
@@ -133,7 +130,7 @@
 ## Functional interface
 - Contains only one `abstract` method,
 - Ex: `StringListener.java`,
-  ```
+  ```java
   public interface StringListener {
       void onDateSet(String date);
   }
@@ -153,19 +150,19 @@
   - Returns a negative integer(`< 0`), if the object is less than the parameter,
   - Returns a positive integer(`> 0`), if the object is greater than the parameter,
 - `Comparable` interface is:
-  ```
+  ```java
   public interface Comparable<T> {
      public int compareTo(T o);
   }
   ```
-- Ex: See `Student.java`, `Test.java`
-  ```
+- Ex:
+  ```java
   public class Student implements Comparable<Student>{
       private int roll;
       private String name;
       private String email;
       private double height;
-      ...
+      /*...*/
       @Override
       public int compareTo(Student o) {
           // our own logic
@@ -174,7 +171,7 @@
   }
   ```
   Using like this:
-  ```
+  ```java
   private static void comparableTest(){
       // using Bard
       Student studentOne1 = new Student(112, "Rakib Hasan", "rakibhasan@gmail.com", 1.75);
@@ -197,7 +194,7 @@
 ### Comparator
 - Used for specifying an ordering different from the ordering specified by the `Comparable` interface,
 - `Comparator` interface is:
-  ```
+  ```java
   public interface Comparator<T> {
      int compare(T o1, T o2);
      boolean equals(Object obj);
@@ -209,8 +206,8 @@
     - returns zero(`0`) if equal,
     - returns a negative integer(`< 0`) if `1st` argument is less,
     - returns a positive integer(`> 0`) if `2nd` argument is less,
-- Ex`(` Sort by `firstName` `)`: See `Test.java`,
-  ```
+- Ex`(` Sort by `firstName` `)`:
+  ```java
   private static void comparatorTest1(){
       List<Student> list = getStudentList(); // create an list of 7 Students
   
@@ -232,8 +229,8 @@
       // Ariful Islam, Rafi Ahmed, Rakib Hasan, Sadia Akter, Sumaiya Khatun, Sumaiya Akter, Tasnim Akhter,
   }
   ```
-- Ex`(` Sort by `firsName` then `lastName` `)`: See `Test.java`,
-  ```
+- Ex`(` Sort by `firsName` then `lastName` `)`:
+  ```java
   private static void comparatorMultiple(){  
       List<Student> list = getStudentList(); // create an list of 7 Students
       List<Student> list2 = getStudentList(); // create an list of 7 Students
