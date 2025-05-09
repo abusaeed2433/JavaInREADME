@@ -195,6 +195,7 @@
 - It's actually useful. Just make sure your resource class implements `AutoCloseable` & has `close()` method,
 
 
+
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
 <a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/exceptionhandling/part1/">
@@ -206,3 +207,4 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
+    

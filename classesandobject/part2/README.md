@@ -223,6 +223,7 @@
   ```
 - Above one is a simple example. Learn more by yourself if you want to,
 
+
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
 <a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/classesandobject/part1/">

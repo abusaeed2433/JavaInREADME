@@ -167,6 +167,7 @@
 >> Basic overriding knowledge is enough in almost most of the cases
 
 
+
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
 <a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/inheritance/part2/">
@@ -178,3 +179,4 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
+    

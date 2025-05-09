@@ -167,3 +167,16 @@
   ```
   `(a)` will automatically call `walk()` method of `Person2` class. No need to define explicitly,
 - interface lets you put unrelated classes under one umbrella. For example: object of `Person2` and `Duck2` can be referred using the variable of `Walkable` interface,
+
+<!-- bottom_nav_bar_1243 -->
+<div align="center">
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/inheritance/part7/">
+    <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/interfaces/part2/">
+    <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
+</a>
+</div>
+<!-- bottom_nav_bar_1243 -->
+    

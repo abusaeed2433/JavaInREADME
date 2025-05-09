@@ -207,6 +207,7 @@
   - Remove methods that can change variables state (Setter methods).
 
 
+
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
 <a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/theobjectclass/part1/">
@@ -218,3 +219,4 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
+    

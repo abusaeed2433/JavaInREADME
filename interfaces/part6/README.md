@@ -94,3 +94,16 @@
 
 
 >> IF IT WERE TOO EASY, EVERYONE WOULD DO IT.
+
+<!-- bottom_nav_bar_1243 -->
+<div align="center">
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/interfaces/part5/">
+    <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/interfaces/part7/">
+    <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
+</a>
+</div>
+<!-- bottom_nav_bar_1243 -->
+    

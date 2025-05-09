@@ -249,3 +249,16 @@ When a class inherits a method with the same signature from multiple path(`class
     ```
     - After overriding `onClicked`, we are calling `onClicked` of `Clickable` interface,
     - We can implement our own logic also,
+
+<!-- bottom_nav_bar_1243 -->
+<div align="center">
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/interfaces/part3/">
+    <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/interfaces/part5/">
+    <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
+</a>
+</div>
+<!-- bottom_nav_bar_1243 -->
+    

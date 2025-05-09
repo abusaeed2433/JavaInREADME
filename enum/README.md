@@ -137,7 +137,7 @@
     ```
 
 ## Implementing interface
-- An enum type may implement q_Interfaces,
+- An enum type may implement interfaces,
 - An enum type is never inherited by another enum type. So,
 - You must provide implementation for all abstract methods in that interface,
 - See `CommandList.java`, `Executable.java`:
@@ -205,9 +205,10 @@
 
 >> ENUM IS MAINLY USED FOR DECLARING CONSTANT & IT SHOULD BE ENOUGH FOR YOU
 
+
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
-<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/inheritance/part7/">
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/interfaces/part7/">
     <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -216,3 +217,4 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
+    

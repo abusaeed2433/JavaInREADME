@@ -243,3 +243,16 @@
   ```
   - Here parameter of `requestClick` method is of `Clickable` type. But,
   - We can pass object of `MyCustom` class. Remember `Substitution rule`,
+
+<!-- bottom_nav_bar_1243 -->
+<div align="center">
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/interfaces/part2/">
+    <img src="https://img.shields.io/badge/◀%20Previous-blue?style=for-the-badge" alt="Previous">
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/interfaces/part4/">
+    <img src="https://img.shields.io/badge/Next%20▶-blue?style=for-the-badge" alt="Next">
+</a>
+</div>
+<!-- bottom_nav_bar_1243 -->
+    
