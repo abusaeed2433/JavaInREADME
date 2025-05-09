@@ -1,6 +1,5 @@
 
-# inheritance part-5
-> Codes are in `partFive` package
+# Inheritance - part5
 
 ## Disabling Inheritance
 - Prevent class from being used as parent class,
@@ -9,18 +8,18 @@
 - A final method cannot be `overridden` or `hidden` by a `subclass`,
 - Ex: `String` class is `final`,
 - Why to disable inheritance? 
-  - CF reasons are `security`, `correctness`, & `performance`,
+  - Main reasons are `security`, `correctness`, & `performance`,
   - If your class is important for security reasons, you do not want someone to inherit from your class and mess with the security that your class is supposed to implement,
   - A `final` method may result in better performance at runtime because a code optimizer is free to inline the final method calls,
 - Ex of `final-class`: 
-  ```
+  ```java
   public final class Parent{ }
   ```
-  ```
+  ```java
   public class Child extends Parent{} // compile-time error
   ```
-- Ex of `final-method`: See `DummyParent.java`, `DummyChild.java`,
-  ```
+- Ex of `final-method`:
+  ```java
   public class DummyParent {
   
       protected final void start(){
@@ -28,7 +27,7 @@
       }
   }
   ```
-  ```
+  ```java
   public class DummyChild extends DummyParent{
   
       protected final void start(){ //compile time error
@@ -54,8 +53,8 @@
   - It does not matter whether the building is complete(`all concrete methods`) or not(`some abstract methods`),
 - Mainly used for using as `Parent` class,
 - It is completely similar like normal class, only difference is, you can't create object of `abstract-class`,
-- Ex: See `Shape.java`, `Circle.java`, `Rectangle.java` & `testAbstract()` in `Test.java`,
-  ```
+- Ex:
+  ```java
   public abstract class Shape {
       protected final double PI = 3.14159;
       private String name;
@@ -68,7 +67,7 @@
       protected abstract double getArea();
   }
   ```
-  ```
+  ```java
   public class Circle extends Shape{
       private double r;
   
@@ -88,7 +87,7 @@
       }
   }
   ```
-  ```
+  ```java
   public class Rectangle extends Shape{
       private double width;
       private double height;
@@ -112,7 +111,7 @@
   }
   ```
   Using like this:
-  ```
+  ```java
   private static void testAbstract(){
       Shape rectangle = new Rectangle("Rectangle",5,10); // <----(m)
       rectangle.draw(); // Rectangle
@@ -129,8 +128,8 @@
   - `late-binding`: At `(b)`, `getArea()` is determined at runtime,
   - `runtime-polymorphism`: `(m)`, `(a)` & method calls,
 - The greatest advantage of declaring an `abstract method` in a class is to force its `subclasses` to `override` and provide implementation for those methods,
-- Ex-2: See `testAbstract2()` in `Test.java`,
-  ```
+- Ex-2:
+  ```java
   private static void printName(Shape[] shapes){
       for(int i=0; i<shapes.length; i++){
           Shape sp = shapes[i];
@@ -165,12 +164,6 @@
   - an abstract method does not have an implementation,
 
 
-    
-    
-    
-
-
-
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
 <a href="https://github.com/abusaeed2433/JavaInREADME/tree/main/inheritance/part4/">
@@ -182,4 +175,3 @@
 </a>
 </div>
 <!-- bottom_nav_bar_1243 -->
-    

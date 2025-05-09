@@ -60,7 +60,7 @@
 ## Inheritance and Constructors
 - Constructors are `not inherited by subclasses` since they are not member of a class,
 - To initialize the instance variables of `Parent` classes, the constructors of `Parent` class must be called,
-- `super` keyword is used for calling parent class constructor,
+- `super` keyword is used in child class for calling parent class constructor,
 - Constructor of `Parent` class is called first then `Child` class,
 - Ex:
   ```java

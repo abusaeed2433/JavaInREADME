@@ -1,13 +1,11 @@
 
-# inheritance part-6
-> Codes are in `partSix` package
-
+# Inheritance - part6
 
 ## Method Overriding and Generic Method Signatures
-- When Java codes with generics types is compiled, the generic types are transformed into raw types
+- When Java codes with generics types is compiled, the generic types are transformed into raw types,
 - The process that is used to transform the generic type parameters information is known as `type erasure`,
-- Ex: See `GenericSuper.java`, `GenericSub.java`,
-    ```
+- Ex:
+    ```java
     public class GenericSuper<T> {
         public void m1(T a) { }
     
@@ -15,7 +13,7 @@
     }
     ```
     When the `GenericSuper` class is compiled, the `erasure` transforms the code during compilation and the resulting code looks as shown
-    ```
+    ```java
     public class GenericSuper {
         public void m1(Object a) { }
     
@@ -23,7 +21,7 @@
     }
     ```
 - Overriding generic class like:
-    ```
+    ```java
     public class GenericSub extends GenericSuper<Object>{
         public void m1(Object a) { }
     
@@ -38,10 +36,10 @@
 
 ## Typo Danger in Method Overriding
 - Ex:
-  ```
+  ```java
   public void m1(double num) { } // in Parent class
   ```
-  ```
+  ```java
   public void m1(int num) { } // in Child class
   ```
   Here 2nd `m1()` won't override 1st `m1()` since parameter type is different,
@@ -55,8 +53,8 @@
 ## Aggregation / has-a relationship
 - An object of a class contains an object of another class,
 - It is known as `aggregation`,
-- Ex: See `Person.java`, `Address.java`,
-  ```
+- Ex:
+  ```java
   public class Address {
       private String street;
       private String city;
@@ -72,7 +70,7 @@
       ...
   }
   ```
-  ```
+  ```java
   public class Person {
       private String name;
       private String phone;
@@ -105,8 +103,8 @@
 - Sometimes existence of an object only make sense inside another object,
 - For example: `MobileDisplay` is a part of a `Mobile`, & 
 - If `Mobile` is destroyed then its `MobileDisplay` is also destroyed,
-- Ex-1(`Nested class`): See `Mobile.java`, `testComposition1()` in `Test.java`,
-  ```
+- Ex-1(`Nested class`):
+  ```java
   public class Mobile {
       private String brand;
       private MobileDisplay display;
@@ -134,7 +132,7 @@
   }
   ```
   Can be used like this:
-  ```
+  ```java
   private static void testComposition1(){
       Mobile mobile = new Mobile("Nokia");
       mobile.showData(); // @@@@@@@@@@@@@@@@
@@ -142,14 +140,14 @@
   ```
 - In above example, you can't use `MobileDisplay` outside `Mobile` class. But it may be needed to use `MobileDisplay` others,
 
-- Ex-2: See `Engine.java`, `Car.java`, `testComposition2()` in `Test.java`,
-  ```
+- Ex-2:
+  ```java
   public class Engine {
       private String type;
       ...
   }
   ```
-  ```
+  ```java
   public class Car {
       private String brand;
       private Engine engine;
@@ -170,7 +168,7 @@
   }
   ```
   Using like this:
-  ```
+  ```java
   private static void testComposition2(){
   
       Car myCar = new Car("Toyota", "Gasoline");
@@ -213,12 +211,6 @@
 ## inheritance or composition ?
 - Both let you share the code,
 - Whenever you are in doubt in choosing between `composition` and `inheritance`, give preference to `composition`,
-
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">

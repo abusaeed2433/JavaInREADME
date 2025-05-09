@@ -1,9 +1,8 @@
 
-# inheritance part-7
-> Codes are in `partSeven` package
+# Inheritance - part7
 
 ## No Multiple Inheritance of Classes
-- Is defined as having a class inherit from more than one superclass,
+- Is defined as having a class inherited from more than one superclass,
 - Java **doesn't support** multiple inheritance of class,
 - There is no `Diamod-problem`,
   - Diamond problem
@@ -11,8 +10,6 @@
     - Occurs when same method(`a1()`) is available in more than one parent class(`B`, `C`),
     - So, after inheriting, compiler will be confused which one to call,
 - Java don't have such problem,
-
-
 
 ## inheritance summary
 - ### inheritance:
@@ -55,14 +52,6 @@
     
 
 >> There are two ways to write error-free programs; only the third one works. (Alan J. Perlis)
-
-
-
-    
-    
-    
-
-
 
 <!-- bottom_nav_bar_1243 -->
 <div align="center">
