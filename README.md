@@ -7,7 +7,7 @@
 
 ### Topic Orders
 ```
-datatype, operator, classesandobject, theobjectclass, wrapper_class, exceptionhandling, assertion, string, datetime, formatter, regex, array, inheritance, interfaces, enum, java17, qna
+datatype, operator, classesandobject, theobjectclass, wrapperclass, exceptionhandling, assertion, string, datetime, formatter, regex, array, inheritance, interfaces, enum, java17, qna
 ```
 
 ### Topic list
@@ -15,7 +15,7 @@ datatype, operator, classesandobject, theobjectclass, wrapper_class, exceptionha
 - [Operator](./operator/)
 - [Class & Object](./classesandobject/part1/)
 - [The Object class](./theobjectclass/part1/)
-- [Wrapper class](./wrapper_class/)
+- [Wrapper class](./wrapperclass/)
 - [Exception Handling](./exceptionhandling/part1/)
 - [Assertion](./assertion/)
 - [String](./string/part1/)
