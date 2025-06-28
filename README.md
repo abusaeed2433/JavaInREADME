@@ -5,6 +5,9 @@
 - Basic programming knowledge in any languages.
 - Familiarity with `OOP` concepts.
 
+
+### Read the content here: <a href="https://abusaeed2433.github.io/java-in-readme-site/">Java In README</a>
+
 ### Topic Orders
 ```
 datatype, operator, classesandobject, theobjectclass, wrapperclass, exceptionhandling, assertion, string, datetime, formatter, regex, array, inheritance, interfaces, enum, java17, qna
