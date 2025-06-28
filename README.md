@@ -6,7 +6,7 @@
 - Familiarity with `OOP` concepts.
 
 
-### Read the content here: <a href="https://abusaeed2433.github.io/java-in-readme-site/">Java In README</a>
+### Read the content here: <a target="blank" href="https://abusaeed2433.github.io/java-in-readme-site/">Java In README</a>
 
 ### Topic Orders
 ```
